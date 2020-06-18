@@ -285,8 +285,8 @@ GameObject:
   - component: {fileID: 567289718}
   - component: {fileID: 567289717}
   - component: {fileID: 567289716}
-  - component: {fileID: 567289715}
   - component: {fileID: 567289720}
+  - component: {fileID: 567289715}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -589,7 +589,7 @@ GameObject:
   m_Component:
   - component: {fileID: 981941218}
   m_Layer: 5
-  m_Name: Egipt Scenario
+  m_Name: Scotland Scenario
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -707,7 +707,7 @@ GameObject:
   - component: {fileID: 1080605922}
   - component: {fileID: 1080605921}
   m_Layer: 5
-  m_Name: Egipt Button
+  m_Name: Scotland Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -777,7 +777,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 567289715}
-        m_MethodName: StartGameEgipt
+        m_MethodName: StartGameScotland
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1029,7 +1029,7 @@ GameObject:
   - component: {fileID: 1491537479}
   - component: {fileID: 1491537478}
   m_Layer: 5
-  m_Name: Egipt Scenario image
+  m_Name: Scotland Scenario image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

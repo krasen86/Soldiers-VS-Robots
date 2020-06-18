@@ -3,11 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenuScript : MonoBehaviour
+
+public class GameOverScript : MonoBehaviour
 {
+    // Start is called before the first frame update
     public void StartNewGame() {
-        SceneManager.LoadScene("PrepareGame");
+        SceneManager.LoadScene("ScenarioSelection");
     }
+    
+    public void BackToMainMenu() {
+        SceneManager.LoadScene("MainMenu");
+    }
+    
     public void QuitGame()
     {
         Application.Quit();

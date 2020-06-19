@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class ScenarioSelectionScript : MonoBehaviour
 {
-    public void StartGameEngland() {
-        SceneManager.LoadScene("EnglandGame");
+    public void StartMission1() {
+        SceneManager.LoadScene("Mission1");
     }
-    public void StartGameScotland() {
-        SceneManager.LoadScene("ScotlandGame");
+    public void StartMission2() {
+        SceneManager.LoadScene("Mission2");
     }
     public void BackToPrepareGame() {
         SceneManager.LoadScene("PrepareGame");

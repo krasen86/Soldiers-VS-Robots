@@ -8,6 +8,12 @@ public class MainMenuScript : MonoBehaviour
     public void StartNewGame() {
         SceneManager.LoadScene("PrepareGame");
     }
+
+    public void Update() {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            Screen.fullScreen = false;
+        }
+    }
     public void QuitGame()
     {
         Application.Quit();

@@ -50,7 +50,6 @@ public class audio : MonoBehaviour {
 	private bool intro_isPlaying;
 	public bool pause_and_reset;
 	double time;
-	private bool single_trigger = true;
 	private float nearest_gameobject;
 	public float soft_exploration_distance = 5000;
 	public float loud_exploration_distance= 5000;

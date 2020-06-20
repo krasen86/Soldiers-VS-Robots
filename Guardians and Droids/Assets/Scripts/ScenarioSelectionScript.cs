@@ -14,4 +14,9 @@ public class ScenarioSelectionScript : MonoBehaviour
     public void BackToPrepareGame() {
         SceneManager.LoadScene("PrepareGame");
     }
+   public void Update() {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            Screen.fullScreen = false;
+        }
+    }
 }

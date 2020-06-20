@@ -40,9 +40,9 @@ AudioMixerGroupController:
   m_Effects:
   - {fileID: 24400004}
   m_UserColorIndex: 0
-  m_Mute: 1
-  m_Solo: 1
-  m_BypassEffects: 1
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!244 &24400004
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -68,5 +68,5 @@ AudioMixerSnapshotController:
   m_SnapshotID: ebbbd17280e50bf44ac3a6246a68df4c
   m_FloatValues:
     c08312499fbf73d498687310a7ad4486: 1
-    a1a8ac1de11021f4c9fb8d4fc42a8a6e: -0.002441872
+    a1a8ac1de11021f4c9fb8d4fc42a8a6e: 0.025578514
   m_TransitionOverrides: {}

@@ -14,6 +14,11 @@ public class GameOverScript : MonoBehaviour
     public void BackToMainMenu() {
         SceneManager.LoadScene("MainMenu");
     }
+    public void Update() {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            Screen.fullScreen = false;
+        }
+    }
     
     public void QuitGame()
     {

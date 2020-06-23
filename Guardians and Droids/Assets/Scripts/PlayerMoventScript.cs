@@ -24,8 +24,12 @@ public class PlayerMoventScript : MonoBehaviour
 		movement = Vector3.zero;
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-		
-		if(movement != Vector3.zero)
+		if(Input.GetButtonDown("Shoot"))
+        {
+        	StartCoroutine(ShootCo());
+        	
+        }
+		else if(movement != Vector3.zero)
 		{
 			MovePlayer();		
 			playerAnimator.SetFloat("moveX", movement.x);            		
@@ -33,10 +37,20 @@ public class PlayerMoventScript : MonoBehaviour
 			playerAnimator.SetBool("running", true);		
 		}
 		else
-			{
+		{
 			playerAnimator.SetBool("running", false);		
-			}
+		}
+
+	
     }
+
+	private IEnumerator ShootCo()
+	{
+		playerAnimator.SetBool("shooting", true);
+		yield return null;
+		playerAnimator.SetBool("shooting", false);
+		yield return new WaitForSeconds(.1f);
+	}
 
 	private void MovePlayer()
 	{

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class ScenarioSelectionScript : MonoBehaviour
 {
     public void StartMission1() {
-        SceneManager.LoadScene("Mission1");
+        SceneManager.LoadScene("Scenario1");
     }
     public void StartMission2() {
         SceneManager.LoadScene("Mission2");

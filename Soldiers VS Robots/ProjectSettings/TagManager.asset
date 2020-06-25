@@ -17,7 +17,7 @@ TagManager:
   - player
   - bullet
   - enemy
-  - 
+  - laser
   - 
   - 
   - 
@@ -50,4 +50,7 @@ TagManager:
     locked: 0
   - name: enemy
     uniqueID: 1179252261
+    locked: 0
+  - name: laser
+    uniqueID: 3869848755
     locked: 0

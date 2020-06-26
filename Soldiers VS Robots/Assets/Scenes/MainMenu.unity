@@ -1375,7 +1375,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Guardians and Droids
+  m_text: Soldiers VS Robots
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1444,7 +1444,7 @@ MonoBehaviour:
   m_margin: {x: 525.0048, y: 248.15402, z: 510.23865, w: 766.7796}
   m_textInfo:
     textComponent: {fileID: 443117627}
-    characterCount: 20
+    characterCount: 18
     spriteCount: 0
     spaceCount: 2
     wordCount: 3

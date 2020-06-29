@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using System;
 
-public class CameraController : MonoBehaviour
+public class UIViewController : MonoBehaviour
 {
 
 
@@ -11,12 +13,25 @@ public class CameraController : MonoBehaviour
     private Vector3 offset;
 	[SerializeField] private Vector2 maxCamera;
 	[SerializeField] private Vector2 minCamera;
+	[SerializeField] private TMP_Text playerName;
+
+	[SerializeField] private TMP_Text missionTime;
+
+	[SerializeField] private GameState missionState;
 
     void Start()
     {
         cameraMovementFactor = 0.2f;
+        Player player = new Player();
+        playerName.text = player.GetPlayerName();
+
     }
 
+    void Update()
+    {
+	    TimeSpan timeSpan = TimeSpan.FromSeconds(missionState.MissionTime);
+	    missionTime.text = "Time left: " + timeSpan.ToString("m':'ss"); 
+    }
 
     void LateUpdate()
     {

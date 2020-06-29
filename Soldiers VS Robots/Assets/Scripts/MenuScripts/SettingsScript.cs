@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using TMPro;
 public class SettingsScript : MonoBehaviour
 {
 	private GameObject screenToggle;
     [SerializeField] private AudioMixer audioMixer;
-	[SerializeField] private TMPro.TMP_Dropdown dropDown;
+	[SerializeField] private TMP_Dropdown dropDown;
 	private List<string> resolutions;
 
     public void Start()

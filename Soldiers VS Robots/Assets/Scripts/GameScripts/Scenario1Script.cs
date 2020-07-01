@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class Scenario1Script : MonoBehaviour
 {
-    [SerializeField] private GameState missionTime;
-    
+    private GameState gameState;
+
+    void Awake()
+    {
+        gameState = GameState.Instance;
+    }
+
     void Start()
     {
-        missionTime.MissionTime = 300f;
+        gameState.MissionTime = 300f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        missionTime.MissionTime -= Time.deltaTime;
+        gameState.MissionTime -= Time.deltaTime;
         if (Input.GetKeyDown(KeyCode.Escape)) {
             Screen.fullScreen = false;
         }

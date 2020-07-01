@@ -17,13 +17,18 @@ public class UIViewController : MonoBehaviour
 
 	[SerializeField] private TMP_Text missionTime;
 
-	[SerializeField] private GameState missionState;
+	private GameState missionState;
+	private PlayerState playerState;
 
+	void Awake()
+	{
+		playerState = PlayerState.Instance;
+		missionState = GameState.Instance;
+	}
     void Start()
     {
         cameraMovementFactor = 0.2f;
-        Player player = new Player();
-        playerName.text = player.GetPlayerName();
+        playerName.text = playerState.PlayerName;
 
     }
 

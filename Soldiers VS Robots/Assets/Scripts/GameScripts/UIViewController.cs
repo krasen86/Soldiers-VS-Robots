@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using System;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIViewController : MonoBehaviour
 {
@@ -17,7 +18,8 @@ public class UIViewController : MonoBehaviour
 	[SerializeField] private TMP_Text playerName;
 	[SerializeField] private TMP_Text playerScore;
 	[SerializeField] private TMP_Text playerBullets;
-
+	[SerializeField] private Image healthBarImage;
+	[SerializeField] private Slider healthBar;
 
 	[SerializeField] private TMP_Text missionTime;
 
@@ -33,11 +35,24 @@ public class UIViewController : MonoBehaviour
     {
         cameraMovementFactor = 0.2f;
         playerName.text = playerState.PlayerName;
+        
 
     }
 
     void Update()
     {
+	    healthBar.value = playerState.PlayerHealth;
+	    
+	    if (healthBar.value <= healthBar.minValue)
+	    {
+		    healthBarImage.enabled = false;
+	    }
+
+	    if (healthBar.value > healthBar.minValue && !healthBarImage.enabled)
+	    {
+		    healthBarImage.enabled = true;
+	    }
+
 	    TimeSpan timeSpan = TimeSpan.FromSeconds(missionState.MissionTime);
 	    missionTime.text = "Time left: " + timeSpan.ToString("m':'ss");
 	    UpdatePlayerInfo();

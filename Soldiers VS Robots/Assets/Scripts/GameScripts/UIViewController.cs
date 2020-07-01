@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.SceneManagement;
 
 public class UIViewController : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class UIViewController : MonoBehaviour
 	[SerializeField] private Vector2 maxCamera;
 	[SerializeField] private Vector2 minCamera;
 	[SerializeField] private TMP_Text playerName;
+	[SerializeField] private TMP_Text playerScore;
+	[SerializeField] private TMP_Text playerBullets;
+
 
 	[SerializeField] private TMP_Text missionTime;
 
@@ -35,9 +39,21 @@ public class UIViewController : MonoBehaviour
     void Update()
     {
 	    TimeSpan timeSpan = TimeSpan.FromSeconds(missionState.MissionTime);
-	    missionTime.text = "Time left: " + timeSpan.ToString("m':'ss"); 
+	    missionTime.text = "Time left: " + timeSpan.ToString("m':'ss");
+	    UpdatePlayerInfo();
+    }
+    
+    public void ExitGame()
+    {
+	    SceneManager.LoadScene("GameEnded");
+
     }
 
+    private void UpdatePlayerInfo()
+    {
+	    playerScore.text = "Score: " + playerState.PlayerScore;
+	    playerBullets.text = "Bullets: " + playerState.PlayerBullets;
+    }
     void LateUpdate()
     {
         if(transform.position != player.transform.position)

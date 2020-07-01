@@ -825,6 +825,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerName: {fileID: 1443638857}
+  playerState: {fileID: 11400000, guid: 07b7e3858421bf548ab098e37f7a31a3, type: 2}
+  gameState: {fileID: 11400000, guid: 56b0c87cfa5120e439a69485dabb8265, type: 2}
 --- !u!1 &440392688
 GameObject:
   m_ObjectHideFlags: 0
@@ -1080,8 +1082,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 371889525}
-        m_MethodName: SetGameDificulty
-        m_Mode: 1
+        m_MethodName: SetGameDifficulty
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2840,7 +2842,7 @@ MonoBehaviour:
   m_CharacterValidation: 0
   m_RegexValue: 
   m_GlobalPointSize: 14
-  m_CharacterLimit: 0
+  m_CharacterLimit: 50
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls: []

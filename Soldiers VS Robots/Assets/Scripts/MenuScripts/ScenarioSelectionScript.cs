@@ -5,10 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class ScenarioSelectionScript : MonoBehaviour
 {
+    private PlayerState playerState;
+    
     public void StartMission1() {
+        playerState = PlayerState.Instance;
+        playerState.SetPlayerState();
         SceneManager.LoadScene("Scenario1");
     }
     public void StartMission2() {
+        playerState = PlayerState.Instance;
+        playerState.SetPlayerState();
         SceneManager.LoadScene("Mission2");
     }
     public void BackToPrepareGame() {

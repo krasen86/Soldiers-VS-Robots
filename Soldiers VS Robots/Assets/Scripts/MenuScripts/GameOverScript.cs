@@ -2,11 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
+
 
 
 public class GameOverScript : MonoBehaviour
 {
+    private PlayerState playerState;
+    [SerializeField] private TMP_Text playerScore;
+    
     // Start is called before the first frame update
+    void Start()
+    {
+        playerState = PlayerState.Instance;
+        playerScore.text = "Score: " + playerState.PlayerScore;
+    }
+
     public void StartNewGame()
     {
         SceneManager.LoadScene("ScenarioSelection");

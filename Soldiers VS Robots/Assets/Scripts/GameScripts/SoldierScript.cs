@@ -10,16 +10,18 @@ public class SoldierScript : MonoBehaviour
 	private Vector3 movement;
 	private Animator soldierAnimator;
 	[SerializeField] private GameObject bulletTemplate;
+	private PlayerState playerState;
 	
     void Start()
     {
+	    playerState = PlayerState.Instance;
 	    soldierBody = GetComponent<Rigidbody2D>();
         soldierAnimator = GetComponent<Animator>();
     }
 
     void Update(){
-		if(Input.GetButtonDown("Shoot"))
-        {   
+		if(Input.GetButtonDown("Shoot") && playerState.PlayerBullets > 0)
+        {
 	        FireBullet();
         	StartCoroutine(FireCo());
          
@@ -56,6 +58,7 @@ public class SoldierScript : MonoBehaviour
 
 	void FireBullet()
 	{
+		playerState.PlayerBullets = playerState.PlayerBullets - 1;
 		Vector2 direction = new Vector2(soldierAnimator.GetFloat("moveX"),soldierAnimator.GetFloat("moveY"));
 		Bullet bullet = Instantiate(bulletTemplate, transform.position, Quaternion.identity).GetComponent<Bullet>();
 		if (direction.x == 0 && direction.y == 0)
@@ -70,6 +73,7 @@ public class SoldierScript : MonoBehaviour
 		}
 
 	}
+	
 
 	private void MoveSoldier()
 	{

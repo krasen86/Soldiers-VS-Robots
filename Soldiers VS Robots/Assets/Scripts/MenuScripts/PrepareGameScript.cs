@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using System.Text.RegularExpressions;
 
 public class PrepareGameScript : MonoBehaviour
 {
@@ -11,21 +12,29 @@ public class PrepareGameScript : MonoBehaviour
 	[SerializeField] private PlayerState playerState;
 	[SerializeField] private GameState gameState;
 
+
+
 	
     public void SelectScenario()
     {
 	    playerState = PlayerState.Instance;
-		if(playerName.text == null && playerName.text == "")
+		if(string.IsNullOrEmpty(playerName.text) || !Regex.IsMatch(playerName.text,  @"^[a-zA-Z0-9_]+[a-zA-Z0-9_ ]*$") || playerName.text.Length >= 50)
 		{
-			playerName.placeholder.GetComponent<TMP_Text>().text = "Error";
+			ClearInputField();
 		}
 		else
 		{		
-			
 			playerState.PlayerName = playerName.text;
-            SceneManager.LoadScene("ScenarioSelection");
+			SceneManager.LoadScene("ScenarioSelection");
+			
 		}
 
+    }
+
+    private void ClearInputField()
+    {
+	    playerName.text = "";
+	    playerName.placeholder.GetComponent<TMP_Text>().text = "Invalid Name";
     }
 
     public void SetGameDifficulty(int difficulty)
@@ -46,7 +55,7 @@ public class PrepareGameScript : MonoBehaviour
 			    break;
 	    }
     }
-    
+
     public void BackToMainMenu() {
         SceneManager.LoadScene("MainMenu");
     }

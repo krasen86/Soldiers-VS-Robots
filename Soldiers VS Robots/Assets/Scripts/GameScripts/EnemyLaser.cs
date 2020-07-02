@@ -16,7 +16,8 @@ public class EnemyLaser : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Destroy(this.gameObject, 3f);
+
     }
     
     public void FireLaser(Vector3 velocity, Vector3 rotate)

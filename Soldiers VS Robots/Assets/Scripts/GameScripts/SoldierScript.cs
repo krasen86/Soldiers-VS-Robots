@@ -11,6 +11,7 @@ public class SoldierScript : MonoBehaviour
 	private Animator soldierAnimator;
 	[SerializeField] private GameObject bulletTemplate;
 	private PlayerState playerState;
+	[SerializeField] private Boundary boundary;
 	
     void Start()
     {
@@ -24,8 +25,10 @@ public class SoldierScript : MonoBehaviour
         {
 	        FireBullet();
         	StartCoroutine(FireCo());
-         
         }
+		transform.position = new Vector3(Mathf.Clamp(soldierBody.position.x, boundary.xMin, boundary.xMax),
+											Mathf.Clamp(soldierBody.position.y, boundary.yMin, boundary.yMax), transform.position.z
+											);
 	}
     void FixedUpdate()
     {
@@ -78,5 +81,15 @@ public class SoldierScript : MonoBehaviour
 	private void MoveSoldier()
 	{
 		soldierBody.MovePosition(transform.position + movement * soldierSpeed * Time.deltaTime);	
+
 	}
+}
+[System.Serializable]
+public class Boundary {
+		
+	public float xMin;
+	public float yMin;
+	public float yMax;
+	public float xMax;
+
 }

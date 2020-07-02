@@ -20,6 +20,8 @@ public class UIViewController : MonoBehaviour
 	[SerializeField] private TMP_Text playerBullets;
 	[SerializeField] private Image healthBarImage;
 	[SerializeField] private Slider healthBar;
+	
+	[SerializeField] private Camera mainCamera;
 
 	[SerializeField] private TMP_Text missionTime;
 
@@ -34,8 +36,8 @@ public class UIViewController : MonoBehaviour
     void Start()
     {
         cameraMovementFactor = 0.2f;
-        playerName.text = playerState.PlayerName;
-        
+        playerName.text = "Player: " + playerState.PlayerName;
+       
 
     }
 
@@ -71,13 +73,12 @@ public class UIViewController : MonoBehaviour
     }
     void LateUpdate()
     {
-        if(transform.position != player.transform.position)
+        if(mainCamera.transform.position != player.transform.position)
 		{
-			offset = new Vector3(player.transform.position.x, player.transform.position.y ,transform.position.z);
+			offset = new Vector3(player.transform.position.x, player.transform.position.y ,mainCamera.transform.position.z);
 			offset.x = Mathf.Clamp(offset.x, minCamera.x, maxCamera.x);
 			offset.y = Mathf.Clamp(offset.y, minCamera.y, maxCamera.y);
-
-			transform.position = Vector3.Lerp(transform.position, offset, cameraMovementFactor);
+			mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, offset, cameraMovementFactor);
 		}
     }
 }

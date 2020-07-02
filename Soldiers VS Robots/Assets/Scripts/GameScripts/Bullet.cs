@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Destroy(this.gameObject, 3f);
     }
 
     public void FireBullet(Vector2 velocity, Vector3 rotate)

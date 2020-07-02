@@ -22,10 +22,10 @@ public class BlueRobotScript : RobotScript
 	public bool CanFire { get; set; }
 
     void Awake()
-    {  
+    {  	    
+		gameState = GameState.Instance;
 	    playerState = PlayerState.Instance;
         HealthPoints = 100;
-	    gameState = GameState.Instance;
 	    this.Damage = 10;
 	    this.MovementSpeed = 2f;
       	FireDelay = 0.75f;
@@ -40,10 +40,18 @@ public class BlueRobotScript : RobotScript
 
     }
 
+	void LateUpdate()
+	{
+		if (HealthPoints <= 0)
+	    {
+			Destroy(this.gameObject);
+		}
+	}
+
     void Update()
     {
-		Debug.Log(this.HealthPoints);
-		healthBar.value = this.HealthPoints;
+	
+		healthBar.value = HealthPoints;
 	    if (healthBar.value <= healthBar.minValue)
 	    {
 		    healthBarImage.enabled = false;
@@ -96,7 +104,6 @@ public class BlueRobotScript : RobotScript
 			blueRobotAnimator.SetFloat("moveX", movement.x);            		
 			blueRobotAnimator.SetFloat("moveY", movement.y);	
 			blueRobotAnimator.SetBool("moving", true);
-
         }
 		else 
 		{
@@ -105,13 +112,14 @@ public class BlueRobotScript : RobotScript
 
     }
 
-	void OnCollisionEnter2D(Collision2D collision)
+	void OnCollisionEnter2D (Collision2D collision)
 	{
-		if(collision.gameObject.tag.Equals("bullet"))
-		{
+		if(collision.gameObject.tag == "bullet" )
+		{			
 			playerState.PlayerScore += (int) (this.Damage * gameState.GameDifficulty);
 			this.HealthPoints -= this.Damage;
-			Debug.Log(this.HealthPoints);
+			Destroy(collision.gameObject);
 		}	
 	}
+
 }

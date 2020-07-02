@@ -1,14 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Scenario1Script : MonoBehaviour
 {
     private GameState gameState;
+    private PlayerState playerState;
 
     void Awake()
     {
         gameState = GameState.Instance;
+        playerState = PlayerState.Instance;
+
     }
 
     void Start()
@@ -20,6 +24,13 @@ public class Scenario1Script : MonoBehaviour
     void Update()
     {
         gameState.MissionTime -= Time.deltaTime;
+        if (gameState.MissionTime <= 0 || playerState.PlayerHealth <= 0)
+        {
+            SceneManager.LoadScene("GameEnded");
+        }
+        {
+            
+        }
         if (Input.GetKeyDown(KeyCode.Escape)) {
             Screen.fullScreen = false;
         }

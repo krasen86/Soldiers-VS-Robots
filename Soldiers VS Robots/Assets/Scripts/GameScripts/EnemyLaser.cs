@@ -26,8 +26,9 @@ public class EnemyLaser : MonoBehaviour
         transform.rotation = Quaternion.Euler(rotate);
     }
     
-    void OnTriggerEnter2D(Collider2D collider2D)
+    void OnCollisionEnter2D (Collision2D collision)
     {
         Destroy(this.gameObject);
     }
+    
 }

@@ -9,7 +9,6 @@ using UnityEngine.UI;
 public class UIViewController : MonoBehaviour
 {
 
-
     [SerializeField] private GameObject player;
 	private float cameraMovementFactor;
     private Vector3 offset;
@@ -37,8 +36,6 @@ public class UIViewController : MonoBehaviour
     {
         cameraMovementFactor = 0.2f;
         playerName.text = "Player: " + playerState.PlayerName;
-       
-
     }
 
     void Update()

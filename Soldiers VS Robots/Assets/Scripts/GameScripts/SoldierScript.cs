@@ -11,10 +11,12 @@ public class SoldierScript : MonoBehaviour
 	private Animator soldierAnimator;
 	[SerializeField] private GameObject bulletTemplate;
 	private PlayerState playerState;
+	private GameState gameState;
 	[SerializeField] private Boundary boundary;
 	
     void Start()
     {
+		gameState = GameState.Instance;
 	    playerState = PlayerState.Instance;
 	    soldierBody = GetComponent<Rigidbody2D>();
         soldierAnimator = GetComponent<Animator>();
@@ -76,13 +78,21 @@ public class SoldierScript : MonoBehaviour
 		}
 
 	}
-	
+
+	void OnCollisionEnter2D (Collision2D collision)
+	{
+		if(collision.gameObject.tag == "laser" )
+		{			
+			playerState.PlayerHealth -= (int) (10 * gameState.GameDifficulty);
+		}	
+	}
 
 	private void MoveSoldier()
 	{
 		soldierBody.MovePosition(transform.position + movement * soldierSpeed * Time.deltaTime);	
 
 	}
+
 }
 [System.Serializable]
 public class Boundary {

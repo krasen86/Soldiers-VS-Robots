@@ -26,7 +26,11 @@ public class PrepareGameScript : MonoBehaviour
 		{		
 			playerState.PlayerName = playerName.text;
 			SceneManager.LoadScene("ScenarioSelection");
-			
+			if (gameState.GameDifficulty <= 0)
+			{
+				gameState.GameDifficulty = 1f;
+			}
+
 		}
 
     }
@@ -39,19 +43,16 @@ public class PrepareGameScript : MonoBehaviour
 
     public void SetGameDifficulty(int difficulty)
     {
-	    gameState = GameState.Instance;
+	    
 	    switch (difficulty) {
-		    case 1:
+		    case 0:
 			    gameState.GameDifficulty = 1f;
 			    break;
-		    case 2:
+		    case 1:
 			    gameState.GameDifficulty = 0.5f;
 			    break;
-		    case 3:
+		    case 2:
 			    gameState.GameDifficulty = 2f;
-			    break;
-		    default:
-			    gameState.GameDifficulty = 1f;
 			    break;
 	    }
     }
@@ -64,5 +65,10 @@ public class PrepareGameScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape)) {
             Screen.fullScreen = false;
         }
+    }
+
+    void Start()
+    {
+	    gameState = GameState.Instance;
     }
 }

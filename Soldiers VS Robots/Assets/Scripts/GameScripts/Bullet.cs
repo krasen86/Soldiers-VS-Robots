@@ -5,14 +5,13 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private float speed;
-    [SerializeField] private Rigidbody2D rigidBody;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private Rigidbody2D rigidBody;
 
-    // Update is called once per frame
+    void Awake()
+    {
+         rigidBody = GetComponent<Rigidbody2D>();
+    }
+    
     void Update()
     {
         Destroy(this.gameObject, 3f);
@@ -24,7 +23,7 @@ public class Bullet : MonoBehaviour
         transform.rotation = Quaternion.Euler(rotate);
     }
 
-    void OnTriggerEnter2D(Collider2D collider2D)
+    void  OnCollisionEnter2D (Collision2D collision)
     {
         Destroy(this.gameObject);
     }

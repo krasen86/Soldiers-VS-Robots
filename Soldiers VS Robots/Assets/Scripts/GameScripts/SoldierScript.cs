@@ -25,7 +25,7 @@ public class SoldierScript : MonoBehaviour
     }
 
     void Update(){
-		if(Input.GetButtonDown("Shoot") && playerState.PlayerBullets > 0 && playerState.PlayerHealth >= 0)
+		if(Input.GetButtonDown("Shoot") && playerState.PlayerBullets > 0 && playerState.PlayerHealth >= 0 && !PauseScript.Paused)
         {
 	        FireBullet();
         	StartCoroutine(FireCo());

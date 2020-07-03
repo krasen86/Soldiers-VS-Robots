@@ -19,7 +19,8 @@ public class UIViewController : MonoBehaviour
 	[SerializeField] private TMP_Text playerBullets;
 	[SerializeField] private Image healthBarImage;
 	[SerializeField] private Slider healthBar;
-	
+	private float zoomFactor;
+
 	[SerializeField] private Camera mainCamera;
 
 	[SerializeField] private TMP_Text missionTime;
@@ -33,13 +34,15 @@ public class UIViewController : MonoBehaviour
 		missionState = GameState.Instance;
 	}
     void Start()
-    {
-        cameraMovementFactor = 0.2f;
+    {		
+	    zoomFactor = 5f;
+	    cameraMovementFactor = 0.2f;
         playerName.text = "Player: " + playerState.PlayerName;
     }
 
     void Update()
     {
+	    
 	    healthBar.value = playerState.PlayerHealth;
 	    
 	    if (healthBar.value <= healthBar.minValue)
@@ -69,13 +72,37 @@ public class UIViewController : MonoBehaviour
 	    playerBullets.text = "Bullets: " + playerState.PlayerBullets;
     }
     void LateUpdate()
-    {
+    {	    
+	    cameraZoom();
+
         if(mainCamera.transform.position != player.transform.position)
 		{
 			offset = new Vector3(player.transform.position.x, player.transform.position.y ,mainCamera.transform.position.z);
 			offset.x = Mathf.Clamp(offset.x, minCamera.x, maxCamera.x);
 			offset.y = Mathf.Clamp(offset.y, minCamera.y, maxCamera.y);
 			mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, offset, cameraMovementFactor);
+			mainCamera.orthographicSize = zoomFactor;
 		}
+    }
+
+    private void cameraZoom()
+    {
+	    
+	    if (Input.GetAxis("Mouse ScrollWheel") > 0)
+	    {
+		    if (zoomFactor > 2)
+		    {
+			    zoomFactor -= 1;
+		    }
+	    }
+	    if (Input.GetAxis("Mouse ScrollWheel") < 0)
+	    {
+		    if (zoomFactor < 4)
+		    {
+			    zoomFactor += 1;
+		    }
+	    }
+
+	    
     }
 }

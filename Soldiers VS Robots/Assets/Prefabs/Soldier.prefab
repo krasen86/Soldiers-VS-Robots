@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: eb99ddd0ebff5e84a90721c40e2464b1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -98,7 +98,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -120,7 +120,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 1
-  m_Offset: {x: -0.061885834, y: -0.12018776}
+  m_Offset: {x: -0.078508854, y: -0.0869503}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -131,7 +131,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 14.760023, y: 12.948561}
+  m_Size: {x: 14.327937, y: 12.483248}
   m_EdgeRadius: 0
 --- !u!114 &2392253106110347884
 MonoBehaviour:
@@ -189,8 +189,22 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths: []
+  m_ColliderPaths:
+  - m_Collider: {fileID: 2392253106110347885}
+    m_ColliderPaths:
+    - - X: 7085167
+        Y: -6328574
+      - X: 7085167
+        Y: 6154673
+      - X: -7242477
+        Y: 6154380
+      - X: -7242184
+        Y: -6328574
   m_CompositePaths:
-    m_Paths: []
+    m_Paths:
+    - - {x: 0.7084874, y: -0.6328574}
+      - {x: 0.7084874, y: 0.6154673}
+      - {x: -0.7242477, y: 0.6154087}
+      - {x: -0.7241891, y: -0.6328574}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005

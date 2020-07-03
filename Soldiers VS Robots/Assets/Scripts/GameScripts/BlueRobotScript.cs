@@ -14,6 +14,7 @@ public class BlueRobotScript : RobotScript
 	[SerializeField] private Slider healthBar;
 	[SerializeField] private Image healthBarImage;
 	[SerializeField] private GameObject soldier;
+	[SerializeField] private GameObject deathBlueRobot;
 	private float soldierPosition;
 	private PlayerState playerState;
 	private GameState gameState;
@@ -38,55 +39,66 @@ public class BlueRobotScript : RobotScript
 	    soldierPosition = soldier.transform.position.y;
         blueRobotAnimator = GetComponent<Animator>();
 
+
     }
 
-	void LateUpdate()
-	{
-		if (HealthPoints <= 0)
-	    {
-			Destroy(this.gameObject);
-		}
-	}
 
     void Update()
     {
-	
-		healthBar.value = HealthPoints;
-	    if (healthBar.value <= healthBar.minValue)
-	    {
-		    healthBarImage.enabled = false;
-	    }
-	    if (healthBar.value > healthBar.minValue && !healthBarImage.enabled)
-	    {
-		    healthBarImage.enabled = true;
-	    }
+		if(HealthPoints <= 0)
+		{	
+			KillRobot();
+			Destroy(this.gameObject);
+			
+		}
+		else if(HealthPoints > 0){
+		
 
-		if(Vector3.Distance(soldier.transform.position, transform.position) < blueFollowDistance)
-		{     
-			if(this.CanFire)
-			{
-				FireLaser();
-				this.CanFire = false;
-				StartCoroutine(Delay());
+			if(Vector3.Distance(soldier.transform.position, transform.position) < blueFollowDistance)
+			{     
+				if(this.CanFire)
+				{
+					FireLaser();
+					this.CanFire = false;
+					StartCoroutine(Delay());
+				}
 			}
-		}
-		else 
-		{
-			blueRobotAnimator.SetBool("moving", false);
+			else 
+			{
+				blueRobotAnimator.SetBool("moving", false);
+			}
+
+       		FindSoldier();
 		}
 
-        FindSoldier();
+		healthBar.value = HealthPoints;
+ 	    if (healthBar.value <= healthBar.minValue)
+ 	    {
+ 		    healthBarImage.enabled = false;
+ 	    }
+ 	    if (healthBar.value > healthBar.minValue && !healthBarImage.enabled)
+ 	    {
+ 		    healthBarImage.enabled = true;
+ 	    }
     }
 
-	void FireLaser()
+	private void KillRobot()
+	{
+		GameObject deathAnimation = Instantiate(deathBlueRobot, transform.position, Quaternion.identity );
+		Destroy(deathAnimation, 2f);
+	}
+
+	private void FireLaser()
 	{
 		Vector3 direction =  soldier.transform.position - transform.position;
 		EnemyLaser laser = Instantiate(laserTemplate, transform.position, Quaternion.identity).GetComponent<EnemyLaser>();
+		float tempZ = Mathf.Atan2(blueRobotAnimator.GetFloat("moveY"), blueRobotAnimator.GetFloat("moveX")) * Mathf.Rad2Deg;
 
-		laser.FireLaser(direction, Vector3.zero);
+		laser.FireLaser(direction, new Vector3(0,0, tempZ));
 	}
+
 	   
-	IEnumerator Delay()
+	private IEnumerator Delay()
    {
      yield return new WaitForSeconds(this.FireDelay);
      this.CanFire = true;

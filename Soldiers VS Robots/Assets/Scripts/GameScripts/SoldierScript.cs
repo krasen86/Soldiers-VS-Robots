@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class SoldierScript : MonoBehaviour
 {
@@ -23,7 +25,7 @@ public class SoldierScript : MonoBehaviour
     }
 
     void Update(){
-		if(Input.GetButtonDown("Shoot") && playerState.PlayerBullets > 0)
+		if(Input.GetButtonDown("Shoot") && playerState.PlayerBullets > 0 && playerState.PlayerHealth >= 0)
         {
 	        FireBullet();
         	StartCoroutine(FireCo());
@@ -31,26 +33,31 @@ public class SoldierScript : MonoBehaviour
 		transform.position = new Vector3(Mathf.Clamp(soldierBody.position.x, boundary.xMin, boundary.xMax),
 											Mathf.Clamp(soldierBody.position.y, boundary.yMin, boundary.yMax), transform.position.z
 											);
+		if( playerState.PlayerHealth <= 0) 
+		{
+			StartCoroutine(DieCo());
+		}
 	}
     void FixedUpdate()
     {
-		movement = Vector3.zero;
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-
-		if(movement != Vector3.zero)
+		if( playerState.PlayerHealth >= 0)
 		{
-			MoveSoldier();		
-			soldierAnimator.SetFloat("moveX", movement.x);            		
-			soldierAnimator.SetFloat("moveY", movement.y);	
-			soldierAnimator.SetBool("running", true);		
-		}
-		else
-		{
-			soldierAnimator.SetBool("running", false);		
-		}
+			movement = Vector3.zero;
+        	movement.x = Input.GetAxisRaw("Horizontal");
+        	movement.y = Input.GetAxisRaw("Vertical");
 
-	
+			if(movement != Vector3.zero)
+			{
+				MoveSoldier();		
+				soldierAnimator.SetFloat("moveX", movement.x);            		
+				soldierAnimator.SetFloat("moveY", movement.y);	
+				soldierAnimator.SetBool("running", true);		
+			}
+			else
+			{
+				soldierAnimator.SetBool("running", false);		
+			}
+		}
     }
 
 	private IEnumerator FireCo()
@@ -58,7 +65,17 @@ public class SoldierScript : MonoBehaviour
 		soldierAnimator.SetBool("shooting", true);
 		yield return null;
 		soldierAnimator.SetBool("shooting", false);
-		yield return new WaitForSeconds(.1f);
+		yield return new WaitForSeconds(.2f);
+	}
+
+	private IEnumerator DieCo()
+	{
+		soldierAnimator.SetBool("dead", true);
+		yield return new WaitForSeconds(0.2f);
+		soldierAnimator.SetBool("dead", false);
+		yield return new WaitForSeconds(0.1f);	
+		SceneManager.LoadScene("GameEnded");
+
 	}
 
 	void FireBullet()
@@ -83,6 +100,7 @@ public class SoldierScript : MonoBehaviour
 	{
 		if(collision.gameObject.tag == "laser" )
 		{			
+		
 			playerState.PlayerHealth -= (int) (10 * gameState.GameDifficulty);
 		}	
 	}

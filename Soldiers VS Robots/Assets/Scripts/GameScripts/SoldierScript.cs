@@ -15,6 +15,7 @@ public class SoldierScript : MonoBehaviour
 	private PlayerState playerState;
 	private GameState gameState;
 	[SerializeField] private Boundary boundary;
+	private GameObject item;
 	
     void Start()
     {
@@ -25,6 +26,12 @@ public class SoldierScript : MonoBehaviour
     }
 
     void Update(){
+
+        if (Input.GetKeyDown(KeyCode.E) && item != null) 
+             {
+                 AddItem(item);
+             }
+
 		if(Input.GetButtonDown("Shoot") && playerState.PlayerBullets > 0 && playerState.PlayerHealth >= 0 && !PauseScript.Paused)
         {
 	        FireBullet();
@@ -59,6 +66,30 @@ public class SoldierScript : MonoBehaviour
 			}
 		}
     }
+
+	private void AddItem(GameObject itemObject)
+	{
+		if(itemObject.tag == "Crystal")
+		{
+			playerState.PlayerScore += 500;
+			Destroy(itemObject);
+			SceneManager.LoadScene("GameEnded");
+		}
+		else if(itemObject.tag == "weapon")
+		{
+			playerState.PlayerBullets += (int) (50/gameState.GameDifficulty);
+			Destroy(itemObject);
+		}
+		else if(itemObject.tag == "health")
+		{
+			playerState.PlayerHealth += (int) (20/gameState.GameDifficulty);
+			if(playerState.PlayerHealth > 100)
+			{
+				playerState.PlayerHealth = 100;
+			}
+			Destroy(itemObject);
+		}
+	}
 
 	private IEnumerator FireCo()
 	{
@@ -100,7 +131,7 @@ public class SoldierScript : MonoBehaviour
 	{
 		if(collision.gameObject.tag == "laser" )
 		{			
-		
+			
 			playerState.PlayerHealth -= (int) (10 * gameState.GameDifficulty);
 		}	
 	}
@@ -110,6 +141,29 @@ public class SoldierScript : MonoBehaviour
 		soldierBody.MovePosition(transform.position + movement * soldierSpeed * Time.deltaTime);	
 
 	}
+
+    void OnTriggerEnter2D(Collider2D collider2D)
+    {
+        if(collider2D.tag == "Crystal"  || collider2D.gameObject.tag == "health" || collider2D.gameObject.tag == "weapon")
+		{
+			UIViewController.inRange = true;
+			item = collider2D.gameObject;
+		}
+        
+        
+    }
+
+    void OnTriggerExit2D(Collider2D collider2D)
+    {
+
+        if(collider2D.gameObject.tag == "Crystal" || collider2D.gameObject.tag == "health" || collider2D.gameObject.tag == "weapon" )
+		{
+			UIViewController.inRange = false;
+			item = null;
+		}
+
+        
+    }
 
 }
 [System.Serializable]

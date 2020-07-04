@@ -223,7 +223,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 900000
+  m_Mass: 1000000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -301,7 +301,7 @@ MonoBehaviour:
     type: 3}
   healthBar: {fileID: 7383605348535671311}
   healthBarImage: {fileID: 643174084326773133}
-  soldier: {fileID: 2392253106110347872, guid: 75a33e0f2c6ba2a4a9fb898651f67349, type: 3}
+  soldier: {fileID: 0}
   deathBlueRobot: {fileID: 129111727605234219, guid: 7aa58c9a76f1ff04d9126e0721f1c6dd,
     type: 3}
 --- !u!1 &5585616110456609157

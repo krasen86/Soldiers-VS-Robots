@@ -9,7 +9,6 @@ public class BlueRobotScript : RobotScript
     
     [SerializeField] private float blueAtackDistance;
     [SerializeField] private float blueFollowDistance;
-    [SerializeField] private Transform blueStartPosition;
 	[SerializeField] private GameObject laserTemplate;
 	[SerializeField] private Slider healthBar;
 	[SerializeField] private Image healthBarImage;
@@ -35,7 +34,8 @@ public class BlueRobotScript : RobotScript
 
     void Start()
     {
-	  
+	
+	 	this.RobotBody = GetComponent<Rigidbody2D>(); 
 	    soldierPosition = soldier.transform.position.y;
         blueRobotAnimator = GetComponent<Animator>();
 
@@ -49,7 +49,6 @@ public class BlueRobotScript : RobotScript
 		{	
 			KillRobot();
 			Destroy(this.gameObject);
-			
 		}
 		else if(HealthPoints > 0){
 		
@@ -65,6 +64,7 @@ public class BlueRobotScript : RobotScript
 			}
 			else 
 			{
+				this.RobotBody.MovePosition(Vector3.MoveTowards(transform.position, this.GetStartPosition(), this.MovementSpeed * Time.deltaTime));
 				blueRobotAnimator.SetBool("moving", false);
 			}
 
@@ -111,8 +111,8 @@ public class BlueRobotScript : RobotScript
             Vector3.Distance(soldier.transform.position, transform.position) > blueAtackDistance)
         {
 			blueRobotAnimator.enabled = true;
-            transform.position = Vector3.MoveTowards(transform.position, soldier.transform.position, this.MovementSpeed * Time.deltaTime);
-            Vector3 movement = soldier.transform.position - transform.position;
+            this.RobotBody.MovePosition(Vector3.MoveTowards(transform.position, soldier.transform.position, this.MovementSpeed * Time.deltaTime));
+			Vector3 movement = soldier.transform.position - transform.position;
 			blueRobotAnimator.SetFloat("moveX", movement.x);            		
 			blueRobotAnimator.SetFloat("moveY", movement.y);	
 			blueRobotAnimator.SetBool("moving", true);

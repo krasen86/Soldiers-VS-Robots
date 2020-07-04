@@ -7,6 +7,9 @@ TagManager:
   - BackgroundMusic
   - bullet
   - laser
+  - Crystal
+  - health
+  - weapon
   layers:
   - Default
   - TransparentFX

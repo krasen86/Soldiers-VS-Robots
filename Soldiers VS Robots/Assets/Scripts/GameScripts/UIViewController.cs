@@ -17,9 +17,11 @@ public class UIViewController : MonoBehaviour
 	[SerializeField] private TMP_Text playerName;
 	[SerializeField] private TMP_Text playerScore;
 	[SerializeField] private TMP_Text playerBullets;
+	[SerializeField] private GameObject pickUpText;
 	[SerializeField] private Image healthBarImage;
 	[SerializeField] private Slider healthBar;
 	private float zoomFactor;
+	public static bool inRange;
 
 	[SerializeField] private Camera mainCamera;
 
@@ -30,9 +32,11 @@ public class UIViewController : MonoBehaviour
 
 	void Awake()
 	{
+		inRange = false;
 		playerState = PlayerState.Instance;
 		missionState = GameState.Instance;
 	}
+
     void Start()
     {		
 	    zoomFactor = 5f;
@@ -42,7 +46,14 @@ public class UIViewController : MonoBehaviour
 
     void Update()
     {
-	    
+	    if(!pickUpText.activeSelf && inRange)
+		{
+			ShowPickUpText();
+		}
+		else if(pickUpText.activeSelf && !inRange)
+		{
+			HidePickUpText();
+		}
 	    healthBar.value = playerState.PlayerHealth;
 	    
 	    if (healthBar.value <= healthBar.minValue)
@@ -105,4 +116,15 @@ public class UIViewController : MonoBehaviour
 
 	    
     }
+
+	public void ShowPickUpText()
+	{
+		pickUpText.SetActive(true);
+
+	}
+
+	public void HidePickUpText()
+	{
+		pickUpText.SetActive(false);
+	}
 }

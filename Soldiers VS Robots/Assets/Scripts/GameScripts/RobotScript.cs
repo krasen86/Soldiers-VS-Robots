@@ -11,14 +11,21 @@ public class RobotScript : MonoBehaviour
 
     public float MovementSpeed { get; set; }
     
-    private Rigidbody2D robotBody;
+    public Rigidbody2D RobotBody { get; set; }
 
 
 
     
-    [SerializeField] private Boundary boundary;
+    [SerializeField] private Boundary boundary; 
+    [SerializeField] private Vector2 startPosition;   
 
 
+
+
+    public Vector2 GetStartPosition()
+    {
+        return startPosition;
+    }
 
 
     // Start is called before the first frame update
@@ -31,8 +38,8 @@ public class RobotScript : MonoBehaviour
     void Update()
     {
 
-        transform.position = new Vector3(Mathf.Clamp(robotBody.position.x, boundary.xMin, boundary.xMax),
-            Mathf.Clamp(robotBody.position.y, boundary.yMin, boundary.yMax), transform.position.z
+        transform.position = new Vector3(Mathf.Clamp(RobotBody.position.x, boundary.xMin, boundary.xMax),
+            Mathf.Clamp(RobotBody.position.y, boundary.yMin, boundary.yMax), transform.position.z
         );
 		if(this.HealthPoints <= 0)
 		{

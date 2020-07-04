@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2392253106110347885}
   - component: {fileID: 2392253106110347884}
   - component: {fileID: 2392253106110347886}
-  - component: {fileID: -3674045434924288623}
+  - component: {fileID: 2007439105}
   m_Layer: 8
   m_Name: Soldier
   m_TagString: Player
@@ -172,8 +172,8 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!66 &-3674045434924288623
-CompositeCollider2D:
+--- !u!58 &2007439105
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -181,30 +181,10 @@ CompositeCollider2D:
   m_GameObject: {fileID: 2392253106110347872}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 358074605a7aa034d9ff2c3b954b03fe, type: 2}
-  m_IsTrigger: 0
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
-  m_GenerationType: 0
-  m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 2392253106110347885}
-    m_ColliderPaths:
-    - - X: 7085167
-        Y: -6328574
-      - X: 7085167
-        Y: 6154673
-      - X: -7242477
-        Y: 6154380
-      - X: -7242184
-        Y: -6328574
-  m_CompositePaths:
-    m_Paths:
-    - - {x: 0.7084874, y: -0.6328574}
-      - {x: 0.7084874, y: 0.6154673}
-      - {x: -0.7242477, y: 0.6154087}
-      - {x: -0.7241891, y: -0.6328574}
-  m_VertexDistance: 0.0005
-  m_OffsetDistance: 0.00005
+  m_Offset: {x: -1.2883997, y: 1.0976624}
+  serializedVersion: 2
+  m_Radius: 15.002899

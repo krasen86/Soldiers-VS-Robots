@@ -24,10 +24,7 @@ public class Scenario1Script : MonoBehaviour
     void Update()
     {
         gameState.MissionTime -= Time.deltaTime;
-        if (gameState.MissionTime <= 0)
-        {
-            SceneManager.LoadScene("GameEnded");
-        }
+
         if (Input.GetKeyDown(KeyCode.Escape)) {
             Screen.fullScreen = false;
         }

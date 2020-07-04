@@ -73,7 +73,7 @@ public class SoldierScript : MonoBehaviour
 		{
 			playerState.PlayerScore += 500;
 			Destroy(itemObject);
-			SceneManager.LoadScene("GameEnded");
+			GameEndedScript.Completed = true;
 		}
 		else if(itemObject.tag == "weapon")
 		{

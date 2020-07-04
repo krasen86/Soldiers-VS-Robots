@@ -46,6 +46,7 @@ public class UIViewController : MonoBehaviour
 
     void Update()
     {
+
 	    if(!pickUpText.activeSelf && inRange)
 		{
 			ShowPickUpText();
@@ -54,6 +55,8 @@ public class UIViewController : MonoBehaviour
 		{
 			HidePickUpText();
 		}
+
+
 	    healthBar.value = playerState.PlayerHealth;
 	    
 	    if (healthBar.value <= healthBar.minValue)
@@ -67,7 +70,12 @@ public class UIViewController : MonoBehaviour
 	    }
 
 	    TimeSpan timeSpan = TimeSpan.FromSeconds(missionState.MissionTime);
+		
 	    missionTime.text = "Time left: " + timeSpan.ToString("m':'ss");
+	    if (missionState.MissionTime<=60)
+	    {
+		    missionTime.color  = Color.red;
+	    }
 	    UpdatePlayerInfo();
     }
     

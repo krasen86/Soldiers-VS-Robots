@@ -71,7 +71,7 @@ public class SoldierScript : MonoBehaviour
 	{
 		if(itemObject.tag == "Crystal")
 		{
-			playerState.PlayerScore += 500;
+			playerState.PlayerScore =(int) (playerState.PlayerScore + ((500* gameState.GameDifficulty)*(gameState.MissionTime/100))) + 100;
 			Destroy(itemObject);
 			GameEndedScript.Completed = true;
 		}

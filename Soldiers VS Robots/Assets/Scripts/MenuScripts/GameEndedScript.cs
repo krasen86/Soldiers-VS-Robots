@@ -13,6 +13,7 @@ public class GameEndedScript : MonoBehaviour
     public static bool Completed { get; set; }
     private GameState gameState;
 
+
     private PlayerState playerState;
     // Start is called before the first frame update
     void Start()
@@ -53,6 +54,7 @@ public class GameEndedScript : MonoBehaviour
     private IEnumerator DelayAndEnd()
     {
         yield return new WaitForSeconds(3f);
+		DataIOStream.AddPlayer(playerState.PlayerName, playerState.PlayerScore);
         SceneManager.LoadScene("GameEnded");
     }
 }

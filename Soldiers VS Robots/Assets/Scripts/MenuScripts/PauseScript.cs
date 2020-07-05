@@ -46,9 +46,11 @@ public class PauseScript : MonoBehaviour
     }
     
     public void QuitGame()
-    {
+    { 
+
+		Paused = false;
         Application.Quit();
-        Paused = false;
+       
         Debug.Log("Has quit Game");
     }
     

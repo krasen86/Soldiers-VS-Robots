@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Scenario1Script : MonoBehaviour
+public class MissionScript : MonoBehaviour
 {
     private GameState gameState;
-    private PlayerState playerState;
 
     void Awake()
     {
         gameState = GameState.Instance;
-        playerState = PlayerState.Instance;
+        
 
     }
 

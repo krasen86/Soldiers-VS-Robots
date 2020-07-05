@@ -70,5 +70,6 @@ public class PrepareGameScript : MonoBehaviour
     void Start()
     {
 	    gameState = GameState.Instance;
+	    playerState = PlayerState.Instance;
     }
 }

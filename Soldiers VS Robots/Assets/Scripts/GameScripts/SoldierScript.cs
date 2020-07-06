@@ -104,8 +104,7 @@ public class SoldierScript : MonoBehaviour
 		soldierAnimator.SetBool("dead", true);
 		yield return new WaitForSeconds(0.2f);
 		soldierAnimator.SetBool("dead", false);
-		yield return new WaitForSeconds(0.1f);	
-		SceneManager.LoadScene("GameEnded");
+		yield return new WaitForSeconds(0.1f);
 
 	}
 

@@ -9,6 +9,11 @@ public class DataIOStream
         private static string filePath = "NewSave.json";
         private static PlayerController playerController = new PlayerController{playersList = new List<Player>()};
 
+		public static PlayerController GetPlayerController()
+		{
+			return playerController;
+		}
+
         public static void AddPlayer(string playerName, int playerScore)
         {
                 int index = playerController.playersList.FindIndex(item => item.name == playerName);

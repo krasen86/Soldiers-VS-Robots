@@ -289,21 +289,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed4722da8b7a6664d82b5a1a71ea684a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundary:
-    xMin: -48
-    yMin: -1
-    yMax: 54.5
-    xMax: 34.5
-  blueAtackDistance: 4
-  blueFollowDistance: 12
-  blueStartPosition: {fileID: 0}
+  atackDistance: 4
+  followDistance: 12
   laserTemplate: {fileID: 5073068992727973452, guid: 489aca2322ece2a4da1accf4cfa3c493,
     type: 3}
   healthBar: {fileID: 7383605348535671311}
   healthBarImage: {fileID: 643174084326773133}
   soldier: {fileID: 0}
-  deathBlueRobot: {fileID: 129111727605234219, guid: 7aa58c9a76f1ff04d9126e0721f1c6dd,
+  deathRobot: {fileID: 129111727605234219, guid: 7aa58c9a76f1ff04d9126e0721f1c6dd,
     type: 3}
+  boundary:
+    xMin: -48
+    yMin: -1
+    yMax: 54.5
+    xMax: 34.5
+  startPosition: {x: -22, y: 9}
 --- !u!1 &5585616110456609157
 GameObject:
   m_ObjectHideFlags: 0

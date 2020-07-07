@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-public class BlueRobotScript : RobotScript
+public class EnemyGreen  : RobotScript
 {
-    
+      
 	private PlayerState playerState;
 
 
@@ -16,7 +15,7 @@ public class BlueRobotScript : RobotScript
 	    playerState = PlayerState.Instance;
         HealthPoints = 100;
 	    this.Damage = 10;
-	    this.MovementSpeed = 2f;
+	    this.MovementSpeed = 4f;
       	FireDelay = 0.75f;
 		CanFire = true;
 	 	this.RobotBody = GetComponent<Rigidbody2D>(); 
@@ -55,8 +54,9 @@ public class BlueRobotScript : RobotScript
 
 		UpdateHealthBar();
 
-    }
 
+
+    }
 
 
 
@@ -70,18 +70,17 @@ public class BlueRobotScript : RobotScript
 			playerState.PlayerScore += (int) (this.Damage * this.GameState.GameDifficulty);
 			if(this.GameState.GameDifficulty == 1)
 			{
-				this.HealthPoints -= (int) (this.Damage * this.GameState.GameDifficulty);
+				this.HealthPoints -= this.Damage  * 2;
 			}
 			else if (this.GameState.GameDifficulty == 2)
 			{
-				this.HealthPoints -= (int) (this.Damage * 0.5);
+				this.HealthPoints -= (int) (this.Damage * 0.5) * 2;
 			}
 			else
 			{
-				this.HealthPoints -= (int) (this.Damage * 2);
+				this.HealthPoints -= (int) (this.Damage * 2) * 2;
 			}
 			Destroy(collision.gameObject);
 		}	
 	}
-
 }

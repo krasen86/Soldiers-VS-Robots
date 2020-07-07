@@ -1,235 +1,199 @@
 fileFormatVersion: 2
-guid: 699453eb0ad82fc429e548925f6a428b
+guid: 998733cfa3685e24f9c6d86450e9a28a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5841953263843411597
-    second: heroV5_64_0
+      213: -6248741079362886434
+    second: Boss_0
   - first:
-      213: -955234132654706814
-    second: heroV5_64_1
+      213: 2287940250583960180
+    second: Boss_1
   - first:
-      213: 1195307163470299913
-    second: heroV5_64_2
+      213: 4935984790844978548
+    second: Boss_2
   - first:
-      213: 3155585928273628904
-    second: heroV5_64_3
+      213: -1341004319433955295
+    second: Boss_3
   - first:
-      213: -1829841239019392153
-    second: heroV5_64_4
+      213: -5999534734459318484
+    second: Boss_4
   - first:
-      213: 1312998591984362441
-    second: heroV5_64_5
+      213: -7156185490814696510
+    second: Boss_5
   - first:
-      213: 7970404367808742954
-    second: heroV5_64_6
+      213: 1243870551893655439
+    second: Boss_6
   - first:
-      213: 8669228697795262940
-    second: heroV5_64_7
+      213: -77334111701985629
+    second: Boss_7
   - first:
-      213: -4268857815354341897
-    second: heroV5_64_8
+      213: -2075714688798011193
+    second: Boss_8
   - first:
-      213: 2216865643169296809
-    second: heroV5_64_9
+      213: -6239074346997327397
+    second: Boss_9
   - first:
-      213: -3018929353651806429
-    second: heroV5_64_10
+      213: 6336801248783307803
+    second: Boss_10
   - first:
-      213: -1651533555604564065
-    second: heroV5_64_11
+      213: 7863477865700277253
+    second: Boss_11
   - first:
-      213: 1305686621848812561
-    second: heroV5_64_12
+      213: -1062783551152267458
+    second: Boss_12
   - first:
-      213: -6171808760199187617
-    second: heroV5_64_13
+      213: 2749336523888890881
+    second: Boss_13
   - first:
-      213: -5935185290790261742
-    second: heroV5_64_14
+      213: 8456867841273632492
+    second: Boss_14
   - first:
-      213: 1301889375884597001
-    second: heroV5_64_15
+      213: 892964638181408460
+    second: Boss_15
   - first:
-      213: -4290967030274123266
-    second: heroV5_64_16
+      213: -2573064321809260712
+    second: Boss_16
   - first:
-      213: 6967321410957922
-    second: heroV5_64_17
+      213: -8525165665687653785
+    second: Boss_17
   - first:
-      213: -4339525580534148559
-    second: heroV5_64_18
+      213: 8120684594219722354
+    second: Boss_18
   - first:
-      213: -8252877243356969492
-    second: heroV5_64_19
+      213: 1117132641777095476
+    second: Boss_19
   - first:
-      213: 2382386012146498953
-    second: heroV5_64_20
+      213: 6729110025151246241
+    second: Boss_20
   - first:
-      213: 2967028551486323564
-    second: heroV5_64_21
+      213: 5460223232398793741
+    second: Boss_21
   - first:
-      213: 1420767086915463560
-    second: heroV5_64_22
+      213: 7333931048903773045
+    second: Boss_22
   - first:
-      213: -6233848200328261909
-    second: heroV5_64_23
+      213: 8608643266416861846
+    second: Boss_23
   - first:
-      213: 2920687840808707465
-    second: heroV5_64_24
+      213: 4868110562458583285
+    second: Boss_24
   - first:
-      213: 8385185554450229598
-    second: heroV5_64_25
+      213: 3164928121181704560
+    second: Boss_25
   - first:
-      213: -1293159904991033029
-    second: heroV5_64_26
+      213: 7877382446567120327
+    second: Boss_26
   - first:
-      213: 2366723815993312796
-    second: heroV5_64_27
+      213: -4366232864221219108
+    second: Boss_27
   - first:
-      213: 8706437164528764912
-    second: heroV5_64_28
+      213: -4636589440907107469
+    second: Boss_28
   - first:
-      213: -1853075693045378666
-    second: heroV5_64_29
+      213: 3912229087974256110
+    second: Boss_29
   - first:
-      213: -4164381686390895087
-    second: heroV5_64_30
+      213: 4459227733260487133
+    second: Boss_30
   - first:
-      213: 1025338089458998058
-    second: heroV5_64_31
+      213: -2020325525169976220
+    second: Boss_31
   - first:
-      213: 2743778717205445824
-    second: heroV5_64_32
+      213: -6490247484321988823
+    second: Boss_32
   - first:
-      213: -3538371053864907006
-    second: heroV5_64_33
+      213: -2408005048702860878
+    second: Boss_33
   - first:
-      213: 7369001870301178187
-    second: heroV5_64_34
+      213: -5053515367568094168
+    second: Boss_34
   - first:
-      213: 880687856297009401
-    second: heroV5_64_35
+      213: -1695623826090484714
+    second: Boss_35
   - first:
-      213: 7719102470674999094
-    second: heroV5_64_36
+      213: -7644747476578479732
+    second: Boss_36
   - first:
-      213: -7274240167133936241
-    second: heroV5_64_37
+      213: -1871275164213525714
+    second: Boss_37
   - first:
-      213: -2955999624362823898
-    second: heroV5_64_38
+      213: -1469714918341489720
+    second: Boss_38
   - first:
-      213: 5233232387560097042
-    second: heroV5_64_39
+      213: -8577095470133914199
+    second: Boss_39
   - first:
-      213: -1754363417629414585
-    second: heroV5_64_40
+      213: -7293800422528091902
+    second: Boss_40
   - first:
-      213: 87807095877273208
-    second: heroV5_64_41
+      213: 488729814230810151
+    second: Boss_41
   - first:
-      213: -6947007048412444048
-    second: heroV5_64_42
+      213: -1673802434358699404
+    second: Boss_42
   - first:
-      213: -5258112991205858604
-    second: heroV5_64_43
+      213: 248212213649359204
+    second: Boss_43
   - first:
-      213: 367654380822142213
-    second: heroV5_64_44
+      213: 3141505826821977365
+    second: Boss_44
   - first:
-      213: -7799316853681889010
-    second: heroV5_64_45
+      213: 8041508978851195356
+    second: Boss_45
   - first:
-      213: 6374396509331733145
-    second: heroV5_64_46
+      213: -8074322561053832863
+    second: Boss_46
   - first:
-      213: 4880783737472628369
-    second: heroV5_64_47
+      213: 669937146652427446
+    second: Boss_47
   - first:
-      213: 4742939196004935094
-    second: heroV5_64_48
+      213: 7235910892086596609
+    second: Boss_48
   - first:
-      213: 5546008458560394974
-    second: heroV5_64_49
+      213: 8391468131864791010
+    second: Boss_49
   - first:
-      213: -1152978653693824992
-    second: heroV5_64_50
+      213: 7677507099127967687
+    second: Boss_50
   - first:
-      213: -8675589678698473136
-    second: heroV5_64_51
+      213: -6219231089709473342
+    second: Boss_51
   - first:
-      213: -7104255280877552910
-    second: heroV5_64_52
+      213: 1272912139289101298
+    second: Boss_52
   - first:
-      213: 4618970146805288852
-    second: heroV5_64_53
+      213: -1532567036381900875
+    second: Boss_53
   - first:
-      213: -3901552760369505112
-    second: heroV5_64_54
+      213: 6472233702984940520
+    second: Boss_54
   - first:
-      213: 4056867637143638385
-    second: heroV5_64_55
+      213: 8525948432842409489
+    second: Boss_55
   - first:
-      213: 401763138662610917
-    second: heroV5_64_56
+      213: -2416603544390782151
+    second: Boss_56
   - first:
-      213: 2828007792823542977
-    second: heroV5_64_57
+      213: 3600101876015084432
+    second: Boss_57
   - first:
-      213: -8234519892289333235
-    second: heroV5_64_58
+      213: 8013893611728371875
+    second: Boss_58
   - first:
-      213: -3400412794428524064
-    second: heroV5_64_59
+      213: 3285026746232320489
+    second: Boss_59
   - first:
-      213: -1517992407343921901
-    second: heroV5_64_60
+      213: 5811944248380312660
+    second: Boss_60
   - first:
-      213: -2168262140706885325
-    second: heroV5_64_61
+      213: -1584311012403098652
+    second: Boss_61
   - first:
-      213: -8435387181411644439
-    second: heroV5_64_62
+      213: -2868909223705549743
+    second: Boss_62
   - first:
-      213: 2265252382422083799
-    second: heroV5_64_63
-  - first:
-      213: -5527244304967923771
-    second: heroV5_64_64
-  - first:
-      213: -4909925334285336593
-    second: heroV5_64_65
-  - first:
-      213: 7326434583739355674
-    second: heroV5_64_66
-  - first:
-      213: -6499052087530983231
-    second: heroV5_64_67
-  - first:
-      213: -7032064433280884783
-    second: heroV5_64_68
-  - first:
-      213: -560439395458877748
-    second: heroV5_64_69
-  - first:
-      213: 8732439158871993396
-    second: heroV5_64_70
-  - first:
-      213: 249540027644985087
-    second: heroV5_64_71
-  - first:
-      213: -7043232098036190772
-    second: heroV5_64_72
-  - first:
-      213: -8856422358483828080
-    second: heroV5_64_73
-  - first:
-      213: -2000569508092837713
-    second: heroV5_64_74
-  - first:
-      213: -3902157917225309665
-    second: heroV5_64_75
+      213: 3505498375834950522
+    second: Boss_63
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -387,7 +351,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: heroV5_64_0
+      name: Boss_0
       rect:
         serializedVersion: 2
         x: 0
@@ -401,14 +365,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 379fd2265763deea0800000000000000
-      internalID: -5841953263843411597
+      spriteID: ed42f2778130849a0800000000000000
+      internalID: -6248741079362886434
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_1
+      name: Boss_1
       rect:
         serializedVersion: 2
         x: 64
@@ -422,14 +386,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28fa9cd0e935eb2f0800000000000000
-      internalID: -955234132654706814
+      spriteID: 47a006f298560cf10800000000000000
+      internalID: 2287940250583960180
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_2
+      name: Boss_2
       rect:
         serializedVersion: 2
         x: 128
@@ -443,14 +407,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 903802c3885969010800000000000000
-      internalID: 1195307163470299913
+      spriteID: 475bb0be304208440800000000000000
+      internalID: 4935984790844978548
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_3
+      name: Boss_3
       rect:
         serializedVersion: 2
         x: 192
@@ -464,14 +428,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ee88f8cea4eacb20800000000000000
-      internalID: 3155585928273628904
+      spriteID: 128efd92dabc36de0800000000000000
+      internalID: -1341004319433955295
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_4
+      name: Boss_4
       rect:
         serializedVersion: 2
         x: 0
@@ -485,14 +449,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76373e886191b96e0800000000000000
-      internalID: -1829841239019392153
+      spriteID: c2f4fe622fe5dbca0800000000000000
+      internalID: -5999534734459318484
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_5
+      name: Boss_5
       rect:
         serializedVersion: 2
         x: 64
@@ -506,14 +470,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c3e0d94345b83210800000000000000
-      internalID: 1312998591984362441
+      spriteID: 2c38f21163f10bc90800000000000000
+      internalID: -7156185490814696510
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_6
+      name: Boss_6
       rect:
         serializedVersion: 2
         x: 128
@@ -527,14 +491,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2646732b809c9e60800000000000000
-      internalID: 7970404367808742954
+      spriteID: f8fb0383dad134110800000000000000
+      internalID: 1243870551893655439
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_7
+      name: Boss_7
       rect:
         serializedVersion: 2
         x: 192
@@ -548,14 +512,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd975b0b1994f4870800000000000000
-      internalID: 8669228697795262940
+      spriteID: 3a69bfef8014deef0800000000000000
+      internalID: -77334111701985629
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_8
+      name: Boss_8
       rect:
         serializedVersion: 2
         x: 0
@@ -569,14 +533,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f5872f2f68f1c4c0800000000000000
-      internalID: -4268857815354341897
+      spriteID: 7c05227fc749133e0800000000000000
+      internalID: -2075714688798011193
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_9
+      name: Boss_9
       rect:
         serializedVersion: 2
         x: 64
@@ -590,14 +554,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a1bfd79e83e3ce10800000000000000
-      internalID: 2216865643169296809
+      spriteID: bd9d8fbffea5a69a0800000000000000
+      internalID: -6239074346997327397
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_10
+      name: Boss_10
       rect:
         serializedVersion: 2
         x: 128
@@ -611,14 +575,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32f95917fbb9a16d0800000000000000
-      internalID: -3018929353651806429
+      spriteID: b141bf57927d0f750800000000000000
+      internalID: 6336801248783307803
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_11
+      name: Boss_11
       rect:
         serializedVersion: 2
         x: 192
@@ -632,14 +596,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f975d8b3bf29419e0800000000000000
-      internalID: -1651533555604564065
+      spriteID: 50c3634d47fa02d60800000000000000
+      internalID: 7863477865700277253
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_12
+      name: Boss_12
       rect:
         serializedVersion: 2
         x: 0
@@ -653,14 +617,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11c3743901bbe1210800000000000000
-      internalID: 1305686621848812561
+      spriteID: e3fd078bdfb3041f0800000000000000
+      internalID: -1062783551152267458
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_13
+      name: Boss_13
       rect:
         serializedVersion: 2
         x: 64
@@ -674,14 +638,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f53feaad1a4595aa0800000000000000
-      internalID: -6171808760199187617
+      spriteID: 104976a700b972620800000000000000
+      internalID: 2749336523888890881
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_14
+      name: Boss_14
       rect:
         serializedVersion: 2
         x: 128
@@ -695,14 +659,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21ca25a8c6cf1ada0800000000000000
-      internalID: -5935185290790261742
+      spriteID: ce61a87ce74dc5570800000000000000
+      internalID: 8456867841273632492
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_15
+      name: Boss_15
       rect:
         serializedVersion: 2
         x: 192
@@ -716,14 +680,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 907d47a5d7d311210800000000000000
-      internalID: 1301889375884597001
+      spriteID: cceb9c77b92746c00800000000000000
+      internalID: 892964638181408460
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_16
+      name: Boss_16
       rect:
         serializedVersion: 2
         x: 0
@@ -737,14 +701,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef91991783c6374c0800000000000000
-      internalID: -4290967030274123266
+      spriteID: 85fd35ac1a3aa4cd0800000000000000
+      internalID: -2573064321809260712
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_17
+      name: Boss_17
       rect:
         serializedVersion: 2
         x: 64
@@ -758,14 +722,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2627cbdedb0c81000800000000000000
-      internalID: 6967321410957922
+      spriteID: 762b45dcef680b980800000000000000
+      internalID: -8525165665687653785
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_18
+      name: Boss_18
       rect:
         serializedVersion: 2
         x: 128
@@ -779,14 +743,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1329a8ee978e6c3c0800000000000000
-      internalID: -4339525580534148559
+      spriteID: 276247bfc9772b070800000000000000
+      internalID: 8120684594219722354
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_19
+      name: Boss_19
       rect:
         serializedVersion: 2
         x: 192
@@ -800,14 +764,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce58dce6fd3e77d80800000000000000
-      internalID: -8252877243356969492
+      spriteID: 4331e18083ad08f00800000000000000
+      internalID: 1117132641777095476
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_20
+      name: Boss_20
       rect:
         serializedVersion: 2
         x: 0
@@ -821,14 +785,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98df9d3a47fef0120800000000000000
-      internalID: 2382386012146498953
+      spriteID: 1afe8af5ae9926d50800000000000000
+      internalID: 6729110025151246241
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_21
+      name: Boss_21
       rect:
         serializedVersion: 2
         x: 64
@@ -842,14 +806,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6bb8c16fb00d2920800000000000000
-      internalID: 2967028551486323564
+      spriteID: d0c1771b91c96cb40800000000000000
+      internalID: 5460223232398793741
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_22
+      name: Boss_22
       rect:
         serializedVersion: 2
         x: 128
@@ -863,14 +827,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 889a924532497b310800000000000000
-      internalID: 1420767086915463560
+      spriteID: 57b0e11ae6b57c560800000000000000
+      internalID: 7333931048903773045
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_23
+      name: Boss_23
       rect:
         serializedVersion: 2
         x: 192
@@ -884,14 +848,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: beec9b3171cec79a0800000000000000
-      internalID: -6233848200328261909
+      spriteID: 692e5d4b07b087770800000000000000
+      internalID: 8608643266416861846
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_24
+      name: Boss_24
       rect:
         serializedVersion: 2
         x: 0
@@ -905,14 +869,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 985a433ed1e588820800000000000000
-      internalID: 2920687840808707465
+      spriteID: 5f0cba2a3c00f8340800000000000000
+      internalID: 4868110562458583285
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_25
+      name: Boss_25
       rect:
         serializedVersion: 2
         x: 64
@@ -926,14 +890,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e592ebcc5d92e5470800000000000000
-      internalID: 8385185554450229598
+      spriteID: 0711ea29b551ceb20800000000000000
+      internalID: 3164928121181704560
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_26
+      name: Boss_26
       rect:
         serializedVersion: 2
         x: 128
@@ -947,14 +911,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b394b39fae5cd0ee0800000000000000
-      internalID: -1293159904991033029
+      spriteID: 7cdd7875995125d60800000000000000
+      internalID: 7877382446567120327
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_27
+      name: Boss_27
       rect:
         serializedVersion: 2
         x: 192
@@ -968,77 +932,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c160dbd65ca48d020800000000000000
-      internalID: 2366723815993312796
+      spriteID: cd63571e7560863c0800000000000000
+      internalID: -4366232864221219108
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_28
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 704
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0f70ff2f87a73d870800000000000000
-      internalID: 8706437164528764912
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: heroV5_64_29
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 704
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6919e16a97d8846e0800000000000000
-      internalID: -1853075693045378666
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: heroV5_64_30
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 704
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 11e47898be42536c0800000000000000
-      internalID: -4164381686390895087
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: heroV5_64_31
+      name: Boss_28
       rect:
         serializedVersion: 2
         x: 192
@@ -1052,77 +953,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2b91e45f8bba3e00800000000000000
-      internalID: 1025338089458998058
+      spriteID: 373a76d187687afb0800000000000000
+      internalID: -4636589440907107469
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_32
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 640
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0ccbe45c43cd31620800000000000000
-      internalID: 2743778717205445824
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: heroV5_64_33
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 640
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 20f8bda064e25eec0800000000000000
-      internalID: -3538371053864907006
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: heroV5_64_34
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 640
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b49ad7c8824f34660800000000000000
-      internalID: 7369001870301178187
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: heroV5_64_35
+      name: Boss_29
       rect:
         serializedVersion: 2
         x: 192
@@ -1136,14 +974,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f0659070f4d83c00800000000000000
-      internalID: 880687856297009401
+      spriteID: eede7aca0a70b4630800000000000000
+      internalID: 3912229087974256110
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_36
+      name: Boss_30
       rect:
         serializedVersion: 2
         x: 0
@@ -1157,14 +995,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6376c6dacc2cf1b60800000000000000
-      internalID: 7719102470674999094
+      spriteID: dd9cf855ffb52ed30800000000000000
+      internalID: 4459227733260487133
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_37
+      name: Boss_31
       rect:
         serializedVersion: 2
         x: 64
@@ -1178,14 +1016,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f858a1bcb15bc0b90800000000000000
-      internalID: -7274240167133936241
+      spriteID: 46cc69593ac56f3e0800000000000000
+      internalID: -2020325525169976220
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_38
+      name: Boss_32
       rect:
         serializedVersion: 2
         x: 128
@@ -1199,14 +1037,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62f6aa1d00e2af6d0800000000000000
-      internalID: -2955999624362823898
+      spriteID: 92f7d90cc420ee5a0800000000000000
+      internalID: -6490247484321988823
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_39
+      name: Boss_33
       rect:
         serializedVersion: 2
         x: 192
@@ -1220,14 +1058,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 215c69f212d20a840800000000000000
-      internalID: 5233232387560097042
+      spriteID: 2b108b69a2c059ed0800000000000000
+      internalID: -2408005048702860878
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_40
+      name: Boss_34
       rect:
         serializedVersion: 2
         x: 0
@@ -1241,14 +1079,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74b224544cf37a7e0800000000000000
-      internalID: -1754363417629414585
+      spriteID: 82c40214c8e4ed9b0800000000000000
+      internalID: -5053515367568094168
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_41
+      name: Boss_35
       rect:
         serializedVersion: 2
         x: 64
@@ -1262,14 +1100,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8760686a614f73100800000000000000
-      internalID: 87807095877273208
+      spriteID: 61c103d2d1fe778e0800000000000000
+      internalID: -1695623826090484714
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_42
+      name: Boss_36
       rect:
         serializedVersion: 2
         x: 128
@@ -1283,14 +1121,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07acd3375e5479f90800000000000000
-      internalID: -6947007048412444048
+      spriteID: c81d9f47ca668e590800000000000000
+      internalID: -7644747476578479732
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_43
+      name: Boss_37
       rect:
         serializedVersion: 2
         x: 192
@@ -1304,14 +1142,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d2ee4ad71e6707b0800000000000000
-      internalID: -5258112991205858604
+      spriteID: e23ca001725e706e0800000000000000
+      internalID: -1871275164213525714
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_44
+      name: Boss_38
       rect:
         serializedVersion: 2
         x: 0
@@ -1325,14 +1163,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50d150126bb2a1500800000000000000
-      internalID: 367654380822142213
+      spriteID: 8cbc92391168a9be0800000000000000
+      internalID: -1469714918341489720
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_45
+      name: Boss_39
       rect:
         serializedVersion: 2
         x: 64
@@ -1346,14 +1184,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e01e295e4a243c390800000000000000
-      internalID: -7799316853681889010
+      spriteID: 9a55e020d1908f880800000000000000
+      internalID: -8577095470133914199
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_46
+      name: Boss_40
       rect:
         serializedVersion: 2
         x: 128
@@ -1367,14 +1205,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99a353c2ad7667850800000000000000
-      internalID: 6374396509331733145
+      spriteID: 2097e90f82737ca90800000000000000
+      internalID: -7293800422528091902
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_47
+      name: Boss_41
       rect:
         serializedVersion: 2
         x: 192
@@ -1388,14 +1226,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1963f8123f60cb340800000000000000
-      internalID: 4880783737472628369
+      spriteID: 72ebe583d2158c600800000000000000
+      internalID: 488729814230810151
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_48
+      name: Boss_42
       rect:
         serializedVersion: 2
         x: 0
@@ -1409,14 +1247,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b5a621d11e42d140800000000000000
-      internalID: 4742939196004935094
+      spriteID: 47a9ddbdd8575c8e0800000000000000
+      internalID: -1673802434358699404
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_49
+      name: Boss_43
       rect:
         serializedVersion: 2
         x: 64
@@ -1430,14 +1268,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed6ddcd1f4167fc40800000000000000
-      internalID: 5546008458560394974
+      spriteID: 461cb7771b3d17300800000000000000
+      internalID: 248212213649359204
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_50
+      name: Boss_44
       rect:
         serializedVersion: 2
         x: 128
@@ -1451,14 +1289,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 020b8f0f50ccfffe0800000000000000
-      internalID: -1152978653693824992
+      spriteID: 5153b83b7eed89b20800000000000000
+      internalID: 3141505826821977365
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_51
+      name: Boss_45
       rect:
         serializedVersion: 2
         x: 192
@@ -1472,14 +1310,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 059d128072d1a9780800000000000000
-      internalID: -8675589678698473136
+      spriteID: cd92a8e7fcd299f60800000000000000
+      internalID: 8041508978851195356
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_52
+      name: Boss_46
       rect:
         serializedVersion: 2
         x: 0
@@ -1493,14 +1331,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2fab995467d986d90800000000000000
-      internalID: -7104255280877552910
+      spriteID: 169c67a096e32ff80800000000000000
+      internalID: -8074322561053832863
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_53
+      name: Boss_47
       rect:
         serializedVersion: 2
         x: 64
@@ -1514,14 +1352,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49f867c40e0e91040800000000000000
-      internalID: 4618970146805288852
+      spriteID: 6b48e0019481c4900800000000000000
+      internalID: 669937146652427446
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_54
+      name: Boss_48
       rect:
         serializedVersion: 2
         x: 128
@@ -1535,14 +1373,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ac1bbd8f66ead9c0800000000000000
-      internalID: -3901552760369505112
+      spriteID: 104933d6e9e1b6460800000000000000
+      internalID: 7235910892086596609
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_55
+      name: Boss_49
       rect:
         serializedVersion: 2
         x: 192
@@ -1556,14 +1394,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17199bc2f93ec4830800000000000000
-      internalID: 4056867637143638385
+      spriteID: 2e7cfc75ecb747470800000000000000
+      internalID: 8391468131864791010
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_56
+      name: Boss_50
       rect:
         serializedVersion: 2
         x: 0
@@ -1577,14 +1415,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e7b4db2279539500800000000000000
-      internalID: 401763138662610917
+      spriteID: 7cfef0c870cfb8a60800000000000000
+      internalID: 7677507099127967687
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_57
+      name: Boss_51
       rect:
         serializedVersion: 2
         x: 64
@@ -1598,14 +1436,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c4a849aa1a1f3720800000000000000
-      internalID: 2828007792823542977
+      spriteID: 2c12dc9564ad0b9a0800000000000000
+      internalID: -6219231089709473342
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_58
+      name: Boss_52
       rect:
         serializedVersion: 2
         x: 128
@@ -1619,14 +1457,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d08d43c49cb19bd80800000000000000
-      internalID: -8234519892289333235
+      spriteID: 2f30c94b8da4aa110800000000000000
+      internalID: 1272912139289101298
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_59
+      name: Boss_53
       rect:
         serializedVersion: 2
         x: 192
@@ -1640,14 +1478,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e9f462649e4fc0d0800000000000000
-      internalID: -3400412794428524064
+      spriteID: 5bfcbf9766a3bbae0800000000000000
+      internalID: -1532567036381900875
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_60
+      name: Boss_54
       rect:
         serializedVersion: 2
         x: 0
@@ -1661,56 +1499,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 315868cb2f10feae0800000000000000
-      internalID: -1517992407343921901
+      spriteID: 8eb7ab1f24ef1d950800000000000000
+      internalID: 6472233702984940520
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_61
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 192
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 331fc3b2219c8e1e0800000000000000
-      internalID: -2168262140706885325
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: heroV5_64_62
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 192
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9eb43151d0c7fea80800000000000000
-      internalID: -8435387181411644439
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: heroV5_64_63
+      name: Boss_55
       rect:
         serializedVersion: 2
         x: 192
@@ -1724,14 +1520,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d820ec3a0bcf6f10800000000000000
-      internalID: 2265252382422083799
+      spriteID: 116ced06de0425670800000000000000
+      internalID: 8525948432842409489
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_64
+      name: Boss_56
       rect:
         serializedVersion: 2
         x: 0
@@ -1745,14 +1541,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c70697d6984b43b0800000000000000
-      internalID: -5527244304967923771
+      spriteID: 93333ad41ef767ed0800000000000000
+      internalID: -2416603544390782151
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_65
+      name: Boss_57
       rect:
         serializedVersion: 2
         x: 64
@@ -1766,14 +1562,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fef3b302ce07cdbb0800000000000000
-      internalID: -4909925334285336593
+      spriteID: 093b813059126f130800000000000000
+      internalID: 3600101876015084432
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_66
+      name: Boss_58
       rect:
         serializedVersion: 2
         x: 128
@@ -1787,14 +1583,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a12dbe1df69bca560800000000000000
-      internalID: 7326434583739355674
+      spriteID: 3a087dac7c1173f60800000000000000
+      internalID: 8013893611728371875
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_67
+      name: Boss_59
       rect:
         serializedVersion: 2
         x: 192
@@ -1808,98 +1604,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c074f15f8abec5a0800000000000000
-      internalID: -6499052087530983231
+      spriteID: 9e1b5debb62c69d20800000000000000
+      internalID: 3285026746232320489
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_68
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1df52a8c7a6196e90800000000000000
-      internalID: -7032064433280884783
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: heroV5_64_69
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cc6f983d65be838f0800000000000000
-      internalID: -560439395458877748
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: heroV5_64_70
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 43ca647062bdf2970800000000000000
-      internalID: 8732439158871993396
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: heroV5_64_71
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 64
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ffe3501455b867300800000000000000
-      internalID: 249540027644985087
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: heroV5_64_72
+      name: Boss_60
       rect:
         serializedVersion: 2
         x: 0
@@ -1913,14 +1625,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc17ce539b9614e90800000000000000
-      internalID: -7043232098036190772
+      spriteID: 45c451b308c28a050800000000000000
+      internalID: 5811944248380312660
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_73
+      name: Boss_61
       rect:
         serializedVersion: 2
         x: 64
@@ -1934,14 +1646,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0928ebdc9caa71580800000000000000
-      internalID: -8856422358483828080
+      spriteID: 4eb49fb3785630ae0800000000000000
+      internalID: -1584311012403098652
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_74
+      name: Boss_62
       rect:
         serializedVersion: 2
         x: 128
@@ -1955,14 +1667,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa006a1c1ac8c34e0800000000000000
-      internalID: -2000569508092837713
+      spriteID: 154603cd2469f28d0800000000000000
+      internalID: -2868909223705549743
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heroV5_64_75
+      name: Boss_63
       rect:
         serializedVersion: 2
         x: 192
@@ -1976,8 +1688,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1aae4e7c00c8d9c0800000000000000
-      internalID: -3902157917225309665
+      spriteID: a7bd95c233806a030800000000000000
+      internalID: 3505498375834950522
       vertices: []
       indices: 
       edges: []

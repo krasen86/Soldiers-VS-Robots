@@ -97,6 +97,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  robotBlue: {fileID: 6092439955980416373, guid: 2415763627205fb418126c7bb30a25aa,
+    type: 3}
+  robotGreen: {fileID: 2858397301367153453, guid: de31e673ecbf2a744bef078ac444cd66,
+    type: 3}
 --- !u!50 &-297974007119453046
 Rigidbody2D:
   serializedVersion: 4

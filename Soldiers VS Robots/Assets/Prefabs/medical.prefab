@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7290345327933474450}
   - component: {fileID: 7290345327933474449}
   - component: {fileID: 7290345327933474448}
+  - component: {fileID: 6281951903359231245}
   m_Layer: 0
   m_Name: medical
   m_TagString: health
@@ -116,3 +117,22 @@ PolygonCollider2D:
       - {x: 0.28125, y: -0.25}
       - {x: 0.28125, y: 0.1875}
       - {x: 0.21875, y: 0.25}
+--- !u!95 &6281951903359231245
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7290345327933474455}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f504a3e2ea394d54bb2c9022ef96f295, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

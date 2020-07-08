@@ -10,6 +10,9 @@ TagManager:
   - Crystal
   - health
   - weapon
+  - enemy
+  - enemyGreen
+  - enemyBlue
   layers:
   - Default
   - TransparentFX

@@ -135,3 +135,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 15
   rigidBody: {fileID: 3945801184406427834}
+  damage: {fileID: 4017530603870212245, guid: af6ba2c9a272234429bc961e4034a846, type: 3}

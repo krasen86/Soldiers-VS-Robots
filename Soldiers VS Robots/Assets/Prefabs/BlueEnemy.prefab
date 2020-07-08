@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 2628773768777677905}
   m_Layer: 10
   m_Name: BlueEnemy
-  m_TagString: Untagged
+  m_TagString: enemyBlue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -296,7 +296,7 @@ MonoBehaviour:
   healthBar: {fileID: 7383605348535671311}
   healthBarImage: {fileID: 643174084326773133}
   soldier: {fileID: 0}
-  deathRobot: {fileID: 129111727605234219, guid: 7aa58c9a76f1ff04d9126e0721f1c6dd,
+  deathRobot: {fileID: 1956327504696880526, guid: 639b9bcff0138c8478c1ee0fd2808e6e,
     type: 3}
   boundary:
     xMin: -48

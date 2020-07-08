@@ -5,6 +5,9 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private float speed;
+    [SerializeField] private GameObject robotBlue;
+    [SerializeField] private GameObject robotGreen;
+
     private Rigidbody2D rigidBody;
 
     void Awake()
@@ -25,7 +28,23 @@ public class Bullet : MonoBehaviour
 
     void  OnCollisionEnter2D (Collision2D collision)
     {
-        Destroy(this.gameObject);
+        if (collision.gameObject.tag == "enemyBlue")
+        {
+            GameObject deathAnimation = Instantiate(robotBlue, transform.position, Quaternion.identity );
+            Destroy(this.gameObject);
+            Destroy(deathAnimation, 0.2f);
+        }
+        else if (collision.gameObject.tag == "enemyGreen")
+        {
+            GameObject deathAnimation = Instantiate(robotGreen, transform.position, Quaternion.identity );
+            Destroy(this.gameObject);
+            Destroy(deathAnimation, 0.2f);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+
+        }
     }
     
 

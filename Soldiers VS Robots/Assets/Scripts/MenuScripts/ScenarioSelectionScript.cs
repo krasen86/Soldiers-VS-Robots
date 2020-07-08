@@ -15,7 +15,7 @@ public class ScenarioSelectionScript : MonoBehaviour
     public void StartMission2() {
         playerState = PlayerState.Instance;
         playerState.SetPlayerState();
-        SceneManager.LoadScene("Mission2");
+        SceneManager.LoadScene("Scenario2");
     }
     public void BackToPrepareGame() {
         SceneManager.LoadScene("PrepareGame");

@@ -8,6 +8,7 @@ public class EnemyLaser : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private Rigidbody2D rigidBody;
     [SerializeField] private GameObject damage;
+    [SerializeField] private AudioSource hitSoldierAudio;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,7 @@ public class EnemyLaser : MonoBehaviour
     
     void OnCollisionEnter2D (Collision2D collision)
     {
+        hitSoldierAudio.Play();
         if (collision.gameObject.tag == "Player")
         {
             GameObject deathAnimation = Instantiate(damage, transform.position , Quaternion.identity );

@@ -15,6 +15,10 @@ public class SoldierScript : MonoBehaviour
 	private PlayerState playerState;
 	private GameState gameState;
 	[SerializeField] private Boundary boundary;
+	[SerializeField] private AudioSource crystalAudio;
+	[SerializeField] private AudioSource healthAudio;
+	[SerializeField] private AudioSource bulletsAudio;
+	[SerializeField] private AudioSource deathAudio;
 	private GameObject item;
 	
     void Start()
@@ -72,12 +76,14 @@ public class SoldierScript : MonoBehaviour
 		if(itemObject.tag == "Crystal")
 		{
 			playerState.PlayerScore =(int) (playerState.PlayerScore + ((5 * gameState.MissionTime * gameState.GameDifficulty) + 500));
+			crystalAudio.Play();
 			Destroy(itemObject);
 			GameEndedScript.Completed = true;
 		}
 		else if(itemObject.tag == "weapon")
 		{
 			playerState.PlayerBullets += (int) (50/gameState.GameDifficulty);
+			bulletsAudio.Play();
 			Destroy(itemObject);
 		}
 		else if(itemObject.tag == "health")
@@ -87,6 +93,8 @@ public class SoldierScript : MonoBehaviour
 			{
 				playerState.PlayerHealth = 100;
 			}
+
+			healthAudio.Play();
 			Destroy(itemObject);
 		}
 	}
@@ -101,11 +109,12 @@ public class SoldierScript : MonoBehaviour
 
 	private IEnumerator DieCo()
 	{
+		deathAudio.Play();
 		soldierAnimator.SetBool("dead", true);
 		yield return new WaitForSeconds(0.2f);
 		soldierAnimator.SetBool("dead", false);
 		yield return new WaitForSeconds(0.1f);
-
+		
 	}
 
 	void FireBullet()

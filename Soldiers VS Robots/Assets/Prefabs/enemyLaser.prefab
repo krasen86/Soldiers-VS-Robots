@@ -138,7 +138,7 @@ MonoBehaviour:
   speed: 15
   rigidBody: {fileID: 3945801184406427834}
   damage: {fileID: 4017530603870212245, guid: af6ba2c9a272234429bc961e4034a846, type: 3}
-  hitSoldierAudio: {fileID: 8296716957368230795}
+  hitAudio: {fileID: 8296716957368230795}
 --- !u!82 &3604571626006668649
 AudioSource:
   m_ObjectHideFlags: 0
@@ -248,7 +248,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: bcaa3c034fe3d384fa475cfdf694903a,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 84e427d6b66ab4066b6a4dcd0ce819ee, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

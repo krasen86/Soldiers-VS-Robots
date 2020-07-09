@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private GameObject robotBlue;
     [SerializeField] private GameObject robotGreen;
+ 	[SerializeField] private AudioSource hitAudio;
 
     private Rigidbody2D rigidBody;
 
@@ -28,6 +29,7 @@ public class Bullet : MonoBehaviour
 
     void  OnCollisionEnter2D (Collision2D collision)
     {
+		hitAudio.Play();
         if (collision.gameObject.tag == "enemyBlue")
         {
             GameObject deathAnimation = Instantiate(robotBlue, transform.position, Quaternion.identity );

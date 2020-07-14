@@ -153,10 +153,10 @@ MonoBehaviour:
   bulletTemplate: {fileID: 6335017223725133007, guid: 819b5e78d003c1245b694ebe8cccf660,
     type: 3}
   boundary:
-    xMin: -48
-    yMin: -1
-    yMax: 54.5
-    xMax: 34.5
+    xMin: -78
+    yMin: -7
+    yMax: 82
+    xMax: 62
   crystalAudio: {fileID: 2218240508345991000}
   healthAudio: {fileID: -2933966510779573477}
   bulletsAudio: {fileID: -768923784613302541}

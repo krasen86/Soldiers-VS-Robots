@@ -46,6 +46,7 @@ public class SoldierScript : MonoBehaviour
 											);
 		if( playerState.PlayerHealth <= 0) 
 		{
+			deathAudio.Play();
 			StartCoroutine(DieCo());
 		}
 	}
@@ -82,7 +83,7 @@ public class SoldierScript : MonoBehaviour
 		}
 		else if(itemObject.tag == "weapon")
 		{
-			playerState.PlayerBullets += (int) (50/gameState.GameDifficulty);
+			playerState.PlayerBullets += (int) (40/gameState.GameDifficulty);
 			bulletsAudio.Play();
 			Destroy(itemObject);
 		}
@@ -109,8 +110,7 @@ public class SoldierScript : MonoBehaviour
 
 	private IEnumerator DieCo()
 	{
-		deathAudio.Play();
-		yield return new WaitForSeconds(0.1f);
+		
 		soldierAnimator.SetBool("dead", true);
 		yield return new WaitForSeconds(0.2f);
 		soldierAnimator.SetBool("dead", false);

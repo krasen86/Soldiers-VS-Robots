@@ -61,15 +61,15 @@ public class BossScript : RobotScript
             playerState.PlayerScore += (int) (this.Damage * this.GameState.GameDifficulty);
             if(this.GameState.GameDifficulty == 1)
             {
-                this.HealthPoints -= (int) (this.Damage * this.GameState.GameDifficulty);
+                this.HealthPoints -= (int) (this.Damage/2);
             }
             else if (this.GameState.GameDifficulty == 2)
             {
-                this.HealthPoints -= (int) (this.Damage * 0.5);
+                this.HealthPoints -= (int) (this.Damage/2);
             }
             else
             {
-                this.HealthPoints -= (int) (this.Damage * 2);
+                this.HealthPoints -= (int) (this.Damage/2);
             }
             Destroy(collision.gameObject);
         }	

@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47d02ab97227c544bb22f2d315483fc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soldierSpeed: 15
+  soldierSpeed: 20
   bulletTemplate: {fileID: 6335017223725133007, guid: 819b5e78d003c1245b694ebe8cccf660,
     type: 3}
   boundary:
@@ -308,7 +308,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

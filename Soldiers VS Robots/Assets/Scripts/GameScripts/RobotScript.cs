@@ -81,7 +81,7 @@ public class RobotScript : MonoBehaviour
 	public void KillRobot()
 	{
 		GameObject deathAnimation = Instantiate(deathRobot, transform.position, Quaternion.identity );
-		Destroy(deathAnimation, 2f);
+		Destroy(deathAnimation, 1f);
 	}
 
 	public void FireLaser()

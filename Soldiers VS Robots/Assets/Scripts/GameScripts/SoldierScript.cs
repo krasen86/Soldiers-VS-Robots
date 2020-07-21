@@ -89,7 +89,7 @@ public class SoldierScript : MonoBehaviour
 		}
 		else if(itemObject.tag == "health")
 		{
-			playerState.PlayerHealth += (int) (20/gameState.GameDifficulty);
+			playerState.PlayerHealth += (int) (30/gameState.GameDifficulty);
 			if(playerState.PlayerHealth > 100)
 			{
 				playerState.PlayerHealth = 100;

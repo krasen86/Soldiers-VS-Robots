@@ -37,23 +37,13 @@ public class RankingsScript : MonoBehaviour
 				RectTransform templateTransform = template.GetComponent<RectTransform>();
                 templateTransform.anchoredPosition = new Vector2(0, -height * 0);
                 template.GetComponent<PlayerScoreScript>().SetPlayerRank((1) +"");
-				if(playerScores[0] != null)
+				if(playerScores.Any())
 				{
 					template.GetComponent<PlayerScoreScript>().SetPlayerName(playerScores[0].name);
                     template.GetComponent<PlayerScoreScript>().SetPlayerScore(playerScores[0].score + "");
 				}
 				
         }
-		
-		private void SortScores()
-		{
-			DataIOStream.GetPlayerController().playersList.OrderByDescending( i => i.score);
-			
-		}
-
-        private void Start()
-        {
-
-        }
+        
 
 }

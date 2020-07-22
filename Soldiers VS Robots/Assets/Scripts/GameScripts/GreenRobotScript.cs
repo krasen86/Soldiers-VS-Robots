@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyGreen  : RobotScript
+public class GreenRobotScript  : RobotScript
 {
       
 	private PlayerState playerState;
@@ -36,7 +36,7 @@ public class EnemyGreen  : RobotScript
 
 			if(Vector3.Distance(GetSoldier().transform.position, transform.position) < GetFollowDistance())
 			{     
-				if(this.CanFire)
+				if(this.CanFire  && !playerState.PlayerDead)
 				{
 					FireLaser();
 					this.CanFire = false;

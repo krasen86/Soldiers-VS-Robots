@@ -35,7 +35,7 @@ public class BossScript : RobotScript
 
             if(Vector3.Distance(GetSoldier().transform.position, transform.position) < GetFollowDistance())
             {     
-                if(this.CanFire)
+                if(this.CanFire  && !playerState.PlayerDead)
                 {
                     FireLaser();
                     this.CanFire = false;

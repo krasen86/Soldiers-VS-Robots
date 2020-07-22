@@ -10,11 +10,6 @@ public class PlayerScoreScript : MonoBehaviour
 
     [SerializeField] private TMP_Text  playerScore;
 
-    void Start()
-    {
-
-    }
-
     public void SetPlayerName(string name)
     {
         playerName.text = name;

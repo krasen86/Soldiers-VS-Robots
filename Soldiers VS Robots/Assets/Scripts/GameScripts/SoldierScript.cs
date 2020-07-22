@@ -21,6 +21,7 @@ public class SoldierScript : MonoBehaviour
 	[SerializeField] private AudioSource deathAudio;
 	private GameObject item;
 	
+	
     void Start()
     {
 		gameState = GameState.Instance;
@@ -31,45 +32,53 @@ public class SoldierScript : MonoBehaviour
 
     void Update(){
 
-        if (Input.GetKeyDown(KeyCode.E) && item != null) 
-             {
-                 AddItem(item);
-             }
+	    if (!playerState.PlayerDead)
+	    {
+		    if (Input.GetKeyDown(KeyCode.E) && item != null) 
+		    {
+			    AddItem(item);
+		    }
+            
+		    if(Input.GetButtonDown("Shoot") && playerState.PlayerBullets > 0 && playerState.PlayerHealth >= 0 && !PauseScript.Paused)
+		    {
+			    FireBullet();
+			    StartCoroutine(FireCo());
+		    }
+		    transform.position = new Vector3(Mathf.Clamp(soldierBody.position.x, boundary.xMin, boundary.xMax),
+											Mathf.Clamp(soldierBody.position.y, boundary.yMin, boundary.yMax), 
+											transform.position.z);
+		    if( playerState.PlayerHealth <= 0) 
+		    {
+			    deathAudio.Play();
+			    StartCoroutine(DieCo());
+		    }
+	    }
 
-		if(Input.GetButtonDown("Shoot") && playerState.PlayerBullets > 0 && playerState.PlayerHealth >= 0 && !PauseScript.Paused)
-        {
-	        FireBullet();
-        	StartCoroutine(FireCo());
-        }
-		transform.position = new Vector3(Mathf.Clamp(soldierBody.position.x, boundary.xMin, boundary.xMax),
-											Mathf.Clamp(soldierBody.position.y, boundary.yMin, boundary.yMax), transform.position.z
-											);
-		if( playerState.PlayerHealth <= 0) 
-		{
-			deathAudio.Play();
-			StartCoroutine(DieCo());
-		}
 	}
     void FixedUpdate()
     {
-		if( playerState.PlayerHealth >= 0)
-		{
-			movement = Vector3.zero;
-        	movement.x = Input.GetAxisRaw("Horizontal");
-        	movement.y = Input.GetAxisRaw("Vertical");
+	    if (!playerState.PlayerDead)
+	    {
+		    		if( playerState.PlayerHealth >= 0)
+            		{
+            			movement = Vector3.zero;
+                    	movement.x = Input.GetAxisRaw("Horizontal");
+                    	movement.y = Input.GetAxisRaw("Vertical");
+            
+            			if(movement != Vector3.zero)
+            			{
+            				MoveSoldier();		
+            				soldierAnimator.SetFloat("moveX", movement.x);            		
+            				soldierAnimator.SetFloat("moveY", movement.y);	
+            				soldierAnimator.SetBool("running", true);		
+            			}
+            			else
+            			{
+            				soldierAnimator.SetBool("running", false);		
+            			}
+            		}
+	    }
 
-			if(movement != Vector3.zero)
-			{
-				MoveSoldier();		
-				soldierAnimator.SetFloat("moveX", movement.x);            		
-				soldierAnimator.SetFloat("moveY", movement.y);	
-				soldierAnimator.SetBool("running", true);		
-			}
-			else
-			{
-				soldierAnimator.SetBool("running", false);		
-			}
-		}
     }
 
 	private void AddItem(GameObject itemObject)
@@ -110,12 +119,13 @@ public class SoldierScript : MonoBehaviour
 
 	private IEnumerator DieCo()
 	{
-		
+		playerState.PlayerDead = true;
 		soldierAnimator.SetBool("dead", true);
 		yield return new WaitForSeconds(0.2f);
 		soldierAnimator.SetBool("dead", false);
 		yield return new WaitForSeconds(0.1f);
 		
+
 	}
 
 	void FireBullet()

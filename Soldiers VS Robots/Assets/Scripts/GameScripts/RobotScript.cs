@@ -33,11 +33,6 @@ public class RobotScript : MonoBehaviour
 	public bool CanFire { get; set; }
 
 
-    public Vector2 GetStartPosition()
-    {
-        return startPosition;
-    }
-
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +50,11 @@ public class RobotScript : MonoBehaviour
         
     }
 
+
+    public Vector2 GetStartPosition()
+    {
+        return startPosition;
+    }
 	public GameObject GetSoldier()
 	{
 		return soldier;

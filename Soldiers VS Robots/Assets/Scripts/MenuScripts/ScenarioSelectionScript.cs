@@ -7,21 +7,26 @@ public class ScenarioSelectionScript : MonoBehaviour
 {
     private PlayerState playerState;
     
-    public void StartMission1() {
+    public void StartMission1() 
+    {
         playerState = PlayerState.Instance;
         playerState.SetPlayerState();
         SceneManager.LoadScene("Scenario1");
     }
-    public void StartMission2() {
+    public void StartMission2() 
+    {
         playerState = PlayerState.Instance;
         playerState.SetPlayerState();
         SceneManager.LoadScene("Scenario2");
     }
-    public void BackToPrepareGame() {
+    public void BackToPrepareGame() 
+    {
         SceneManager.LoadScene("PrepareGame");
     }
-   public void Update() {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+   public void Update()
+   {
+        if (Input.GetKeyDown(KeyCode.Escape)) 
+        {
             Screen.fullScreen = false;
         }
     }

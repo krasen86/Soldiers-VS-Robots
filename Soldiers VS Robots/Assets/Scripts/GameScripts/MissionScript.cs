@@ -24,7 +24,8 @@ public class MissionScript : MonoBehaviour
     {
         gameState.MissionTime -= Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
             Screen.fullScreen = false;
         }
     }

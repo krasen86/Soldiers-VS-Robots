@@ -44,7 +44,8 @@ public class PrepareGameScript : MonoBehaviour
     public void SetGameDifficulty(int difficulty)
     {
 	    
-	    switch (difficulty) {
+	    switch (difficulty) 
+	    {
 		    case 0:
 			    gameState.GameDifficulty = 1f;
 			    break;
@@ -57,12 +58,15 @@ public class PrepareGameScript : MonoBehaviour
 	    }
     }
 
-    public void BackToMainMenu() {
+    public void BackToMainMenu() 
+    {
         SceneManager.LoadScene("MainMenu");
     }
        
-    public void Update() {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+    public void Update() 
+    {
+	    if (Input.GetKeyDown(KeyCode.Escape)) 
+        {
             Screen.fullScreen = false;
         }
     }

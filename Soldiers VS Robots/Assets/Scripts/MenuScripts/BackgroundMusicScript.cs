@@ -6,7 +6,8 @@ public class BackgroundMusicScript : MonoBehaviour
 {
 		void Awake(){
 		 	GameObject[] objects = GameObject.FindGameObjectsWithTag("BackgroundMusic");
-				if(objects.Length > 1){
+				if(objects.Length > 1)
+				{
 					Destroy(this.gameObject);
 				}
 			DontDestroyOnLoad(this.gameObject);

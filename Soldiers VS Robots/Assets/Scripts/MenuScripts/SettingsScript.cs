@@ -18,14 +18,16 @@ public class SettingsScript : MonoBehaviour
         {
             screenToggle.GetComponent<Toggle>().isOn = true;
         }
-		else {
-            screenToggle.GetComponent<Toggle>().isOn = false;
+		else 
+        {
+	        screenToggle.GetComponent<Toggle>().isOn = false;
 
-			}
+	    }
 		PopulateDropDown();
     }
 
-	private void PopulateDropDown(){
+	private void PopulateDropDown()
+	{
 		resolutions = new List<string>(){
 										Screen.currentResolution.width + "x" + Screen.currentResolution.height+"(current)",
 										"1280x720", "1366x768", "1920x1080", "3840x2160"};
@@ -38,12 +40,15 @@ public class SettingsScript : MonoBehaviour
         audioMixer.SetFloat("Volume", volume);
     }
     public void Update() {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+        if (Input.GetKeyDown(KeyCode.Escape)) 
+        {
             Screen.fullScreen = false;
         }
     }
-    public void SetResolution(int resolutionIndex){
- 		switch (resolutionIndex) {
+    public void SetResolution(int resolutionIndex)
+    {
+ 		switch (resolutionIndex) 
+        {
                 case 1:
 					Screen.SetResolution(1280, 720,Screen.fullScreen);
                     break;
@@ -60,7 +65,8 @@ public class SettingsScript : MonoBehaviour
 	
     }
 	
-	public void FullScreenUpdate(bool fullScreen){
+	public void FullScreenUpdate(bool fullScreen)
+	{
 		Screen.fullScreen = fullScreen;
 	}
 }

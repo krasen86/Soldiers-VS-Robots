@@ -90,6 +90,7 @@ public class UIViewController : MonoBehaviour
 	    playerScore.text = "Score: " + playerState.PlayerScore;
 	    playerBullets.text = "Bullets: " + playerState.PlayerBullets;
     }
+
     void LateUpdate()
     {	    
 	    cameraZoom();

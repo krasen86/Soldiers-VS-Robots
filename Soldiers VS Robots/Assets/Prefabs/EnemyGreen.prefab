@@ -537,7 +537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   atackDistance: 4
-  followDistance: 12
+  followDistance: 16
   laserTemplate: {fileID: 5073068992727973452, guid: 489aca2322ece2a4da1accf4cfa3c493,
     type: 3}
   healthBar: {fileID: 9198200777042299194}

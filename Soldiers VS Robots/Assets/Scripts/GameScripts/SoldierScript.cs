@@ -99,10 +99,6 @@ public class SoldierScript : MonoBehaviour
 		else if(itemObject.tag == "health")
 		{
 			playerState.PlayerHealth += (int) (30/gameState.GameDifficulty);
-			if(playerState.PlayerHealth > 100)
-			{
-				playerState.PlayerHealth = 100;
-			}
 
 			healthAudio.Play();
 			Destroy(itemObject);

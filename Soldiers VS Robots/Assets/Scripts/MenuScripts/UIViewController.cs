@@ -68,7 +68,12 @@ public class UIViewController : MonoBehaviour
 	    {
 		    healthBarImage.enabled = true;
 	    }
-
+	    
+	    if(playerState.PlayerHealth > 100)
+	    {
+		    healthBar.maxValue = playerState.PlayerHealth;
+	    }
+	    
 	    TimeSpan timeSpan = TimeSpan.FromSeconds(missionState.MissionTime);
 		
 	    missionTime.text = "Time left: " + timeSpan.ToString("m':'ss");

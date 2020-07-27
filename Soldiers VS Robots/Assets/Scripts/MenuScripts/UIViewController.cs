@@ -69,7 +69,7 @@ public class UIViewController : MonoBehaviour
 		    healthBarImage.enabled = true;
 	    }
 	    
-	    if(playerState.PlayerHealth > 100)
+	    if(playerState.PlayerHealth > healthBar.maxValue)
 	    {
 		    healthBar.maxValue = playerState.PlayerHealth;
 	    }

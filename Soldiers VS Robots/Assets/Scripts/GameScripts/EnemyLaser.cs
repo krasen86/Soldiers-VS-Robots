@@ -29,9 +29,9 @@ public class EnemyLaser : MonoBehaviour
         hitAudio.Play();
         if (collision.gameObject.tag == "Player")
         {	
-            GameObject deathAnimation = Instantiate(damage, collision.gameObject.transform.position , Quaternion.identity );
+            GameObject damageAnimation = Instantiate(damage, collision.gameObject.transform.position , Quaternion.identity );
             Destroy(this.gameObject);
-            Destroy(deathAnimation, 0.1f);
+            Destroy(damageAnimation, 0.1f);
         }
         else
         {

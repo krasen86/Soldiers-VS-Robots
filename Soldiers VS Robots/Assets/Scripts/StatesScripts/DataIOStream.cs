@@ -60,6 +60,7 @@ public class DataIOStream
                         return null;
                 }
                 StreamReader reader = new StreamReader(path);
+      
                 string response = "";
                 while (!reader.EndOfStream)
                 {
@@ -81,6 +82,7 @@ public class DataIOStream
                 FileStream stream = File.Create(path);
                 byte[] bytesFile = new UTF8Encoding(true).GetBytes(json);
                 stream.Write(bytesFile, 0,bytesFile.Length);
+                stream.Close();
         }
 
 }

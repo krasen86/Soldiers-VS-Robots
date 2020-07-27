@@ -32,15 +32,15 @@ public class Bullet : MonoBehaviour
 		hitAudio.Play();
         if (collision.gameObject.tag == "enemyBlue")
         {
-            GameObject deathAnimation = Instantiate(robotBlue, transform.position, Quaternion.identity );
+            GameObject damageAnimation = Instantiate(robotBlue, transform.position, Quaternion.identity );
             Destroy(this.gameObject);
-            Destroy(deathAnimation, 0.2f);
+            Destroy(damageAnimation, 0.2f);
         }
         else if (collision.gameObject.tag == "enemyGreen")
         {
-            GameObject deathAnimation = Instantiate(robotGreen, transform.position, Quaternion.identity );
+            GameObject damageAnimation = Instantiate(robotGreen, transform.position, Quaternion.identity );
             Destroy(this.gameObject);
-            Destroy(deathAnimation, 0.2f);
+            Destroy(damageAnimation, 0.2f);
         }
         else
         {

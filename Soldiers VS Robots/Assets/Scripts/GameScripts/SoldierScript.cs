@@ -92,7 +92,8 @@ public class SoldierScript : MonoBehaviour
 		}
 		else if(itemObject.tag == "weapon")
 		{
-			playerState.PlayerBullets += (int) (40/gameState.GameDifficulty);
+			
+			playerState.PlayerBullets += (int) (40 * gameState.GameDifficulty);
 			bulletsAudio.Play();
 			Destroy(itemObject);
 		}
@@ -146,8 +147,14 @@ public class SoldierScript : MonoBehaviour
 	{
 		if(collision.gameObject.tag == "laser" )
 		{			
-			
-			playerState.PlayerHealth -= (int) (10 * gameState.GameDifficulty);
+			if(gameState.GameDifficulty == 1)
+			{
+				playerState.PlayerHealth -= 10;
+			}
+			else	
+			{
+				playerState.PlayerHealth -= 5;
+			}
 		}	
 	}
 

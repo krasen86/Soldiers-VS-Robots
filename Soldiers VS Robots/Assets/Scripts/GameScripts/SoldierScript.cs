@@ -64,6 +64,7 @@ public class SoldierScript : MonoBehaviour
             			movement = Vector3.zero;
                     	movement.x = Input.GetAxisRaw("Horizontal");
                     	movement.y = Input.GetAxisRaw("Vertical");
+					
             
             			if(movement != Vector3.zero)
             			{
@@ -160,7 +161,8 @@ public class SoldierScript : MonoBehaviour
 
 	private void MoveSoldier()
 	{
-		soldierBody.MovePosition(transform.position + movement * soldierSpeed * Time.deltaTime);	
+		
+		transform.position += movement * soldierSpeed * Time.fixedDeltaTime;
 
 	}
 

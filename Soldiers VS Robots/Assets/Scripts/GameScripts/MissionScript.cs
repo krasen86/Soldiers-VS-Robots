@@ -16,7 +16,7 @@ public class MissionScript : MonoBehaviour
 
     void Start()
     {
-        gameState.MissionTime = 300f;
+        gameState.MissionTime = 300f/gameState.GameDifficulty;
     }
 
     // Update is called once per frame

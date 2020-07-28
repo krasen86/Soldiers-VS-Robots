@@ -51,9 +51,9 @@ public class RobotScript : MonoBehaviour
     }
 
 
-    public Vector2 GetStartPosition()
+    public Vector3 GetStartPosition()
     {
-        return startPosition;
+        return new Vector3(startPosition.x, startPosition.y, 0f);
     }
 	public GameObject GetSoldier()
 	{

@@ -21,6 +21,7 @@ public class UIViewController : MonoBehaviour
 	[SerializeField] private Image healthBarImage;
 	[SerializeField] private Slider healthBar;
 	private float zoomFactor;
+	private float zoomCam;
 	public static bool inRange;
 
 	[SerializeField] private Camera mainCamera;
@@ -40,6 +41,7 @@ public class UIViewController : MonoBehaviour
     void Start()
     {		
 	    zoomFactor = 5f;
+	    zoomCam = mainCamera.orthographicSize;
 	    cameraMovementFactor = 0.2f;
         playerName.text = "Player: " + playerState.PlayerName;
     }
@@ -98,7 +100,7 @@ public class UIViewController : MonoBehaviour
 
     void LateUpdate()
     {	    
-	    cameraZoom();
+	    CameraZoom();
 
         if(mainCamera.transform.position != player.transform.position)
 		{
@@ -106,29 +108,15 @@ public class UIViewController : MonoBehaviour
 			offset.x = Mathf.Clamp(offset.x, minCamera.x, maxCamera.x);
 			offset.y = Mathf.Clamp(offset.y, minCamera.y, maxCamera.y);
 			mainCamera.transform.position = Vector3.Lerp(mainCamera.transform.position, offset, cameraMovementFactor);
-			mainCamera.orthographicSize = zoomFactor;
+			
 		}
     }
 
-    private void cameraZoom()
+    private void CameraZoom()
     {
-	    
-	    if (Input.GetAxis("Mouse ScrollWheel") > 0)
-	    {
-		    if (zoomFactor > 2)
-		    {
-			    zoomFactor -= 1;
-		    }
-	    }
-	    if (Input.GetAxis("Mouse ScrollWheel") < 0)
-	    {
-		    if (zoomFactor < 4)
-		    {
-			    zoomFactor += 1;
-		    }
-	    }
-
-	    
+	    zoomCam -= Input.GetAxis("Mouse ScrollWheel") * zoomFactor;
+	    zoomCam = Mathf.Clamp(zoomCam, 1f, 6);
+	    mainCamera.orthographicSize = Mathf.Lerp(mainCamera.orthographicSize,zoomCam, Time.deltaTime * 10);
     }
 
 	public void ShowPickUpText()

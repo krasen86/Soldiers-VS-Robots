@@ -272,8 +272,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610a84720eb11fa43a99110d097bcf22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atackDistance: 8
-  followDistance: 16
+  atackDistance: 10
+  followDistance: 18
   laserTemplate: {fileID: 5073068992727973452, guid: 489aca2322ece2a4da1accf4cfa3c493,
     type: 3}
   healthBar: {fileID: 7092946340244606094}

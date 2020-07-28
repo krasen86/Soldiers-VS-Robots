@@ -14,7 +14,15 @@ public class PlayerState : SingletonScriptableObject<PlayerState>
     {
         PlayerHealth = 100;
         PlayerScore = 0;
-        PlayerBullets = (int) (60/GameState.Instance.GameDifficulty);
+		if(GameState.Instance.GameDifficulty == 2)
+		{
+			PlayerBullets = 80;
+		}
+		else
+		{
+			PlayerBullets = (int) (60/GameState.Instance.GameDifficulty);
+		}
+       
 		PlayerDead = false;
     }
 

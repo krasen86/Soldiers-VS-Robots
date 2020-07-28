@@ -102,7 +102,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10000
+  m_Mass: 100000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -155,7 +155,7 @@ MonoBehaviour:
   boundary:
     xMin: -78
     yMin: -7
-    yMax: 82
+    yMax: 136
     xMax: 62
   crystalAudio: {fileID: 2218240508345991000}
   healthAudio: {fileID: -2933966510779573477}

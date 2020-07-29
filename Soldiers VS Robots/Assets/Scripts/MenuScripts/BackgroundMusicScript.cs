@@ -5,7 +5,7 @@ using UnityEngine;
 public class BackgroundMusicScript : MonoBehaviour
 {
 		void Awake(){
-		 	GameObject[] objects = GameObject.FindGameObjectsWithTag("BackgroundMusic");
+		 	GameObject[] objects = GameObject.FindGameObjectsWithTag(GameConstants.backgroundMusicTag);
 				if(objects.Length > 1)
 				{
 					Destroy(this.gameObject);

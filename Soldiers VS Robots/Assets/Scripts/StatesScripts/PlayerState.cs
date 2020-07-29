@@ -9,18 +9,20 @@ public class PlayerState : SingletonScriptableObject<PlayerState>
     public int PlayerScore { get; set;}
     public int PlayerBullets { get; set;}
  	public bool PlayerDead { get; set;}
+    public bool ItemInRange { get; set; }
+
 
     public void SetPlayerState()
     {
-        PlayerHealth = 100;
+        PlayerHealth = GameConstants.startHealth;
         PlayerScore = 0;
-		if(GameState.Instance.GameDifficulty == 2)
+		if(GameState.Instance.GameDifficulty == GameConstants.hardDificulty)
 		{
-			PlayerBullets = 80;
+			PlayerBullets = GameConstants.startBulletsHard;
 		}
 		else
 		{
-			PlayerBullets = (int) (60/GameState.Instance.GameDifficulty);
+			PlayerBullets = (int) (GameConstants.startBullets/GameState.Instance.GameDifficulty);
 		}
        
 		PlayerDead = false;

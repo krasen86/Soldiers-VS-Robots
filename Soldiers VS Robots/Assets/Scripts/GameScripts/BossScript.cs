@@ -5,17 +5,16 @@ using UnityEngine;
 public class BossScript : RobotScript
 {
     
-    private PlayerState playerState;
+
     // Start is called before the first frame update
     void Start()
     {
         this.GameState = GameState.Instance;
-        playerState = PlayerState.Instance;
-        this.HealthPoints = (int) (200 * this.GameState.GameDifficulty);
+        this.HealthPoints = (int) ((GameConstants.startHealth * GameConstants.bossModifier )* this.GameState.GameDifficulty);
         SetHealthBar(this.HealthPoints);
-        this.Damage = 20;
-        this.MovementSpeed = 5f;
-        FireDelay = 0.75f;
+        this.Damage = GameConstants.bossModifier * GameConstants.baseDamage;
+        this.MovementSpeed = GameConstants.bossMovement;
+        FireDelay = GameConstants.robotFireDelay;
         CanFire = true;
         this.RobotBody = GetComponent<Rigidbody2D>(); 
         this.RobotAnimator = GetComponent<Animator>();
@@ -29,51 +28,25 @@ public class BossScript : RobotScript
             KillRobot();
             Destroy(this.gameObject);
         }
-
-        else if(HealthPoints > 0){
-		
-
-            if(Vector3.Distance(GetSoldier().transform.position, transform.position) < GetFollowDistance())
-            {     
-                if(this.CanFire  && !playerState.PlayerDead)
-                {
-                    FireLaser();
-                    this.CanFire = false;
-                    StartCoroutine(Delay());
-                }
-            }
-            else 
-            {
-                if (transform.position != this.GetStartPosition())
-                {
-                    transform.position = this.GetStartPosition();
-                    RobotAnimator.SetBool("moving", false);
-                }
-            }
-
-            FindSoldier();
+        else if(HealthPoints > 0)
+        {
+            //The robot is restricted in movemnet within predifined boundries
+            ControllBoundries();
+            //Check if player is in rannge and fire laser
+            CheckForAttackSoldier();
+            //Find and follow soldier
+            FollowSoldier();
         }
-
         UpdateHealthBar();
     }
     
     void OnCollisionEnter2D (Collision2D collision)
     {
-        if(collision.gameObject.tag == "bullet" )
-        {			
+        if(collision.gameObject.tag == GameConstants.bulletTag )
+        {		
+            PlayerState playerState = PlayerState.Instance;
             playerState.PlayerScore += (int) (this.Damage * this.GameState.GameDifficulty);
-            if(this.GameState.GameDifficulty == 1)
-            {
-                this.HealthPoints -= (int) (this.Damage/2);
-            }
-            else if (this.GameState.GameDifficulty == 2)
-            {
-                this.HealthPoints -= (int) (this.Damage/2);
-            }
-            else
-            {
-                this.HealthPoints -= (int) (this.Damage/2);
-            }
+            this.HealthPoints -= (int) (this.Damage/GameConstants.bossModifier);
             Destroy(collision.gameObject);
         }	
     }

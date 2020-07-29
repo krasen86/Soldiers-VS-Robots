@@ -19,17 +19,17 @@ public class GameOverScript : MonoBehaviour
         DataIOStream.SavePlayers();
         gameState = GameState.Instance;
         playerState = PlayerState.Instance;
-        playerScore.text = "Score: " + playerState.PlayerScore;
+        playerScore.text = GameConstants.playerScoreText + playerState.PlayerScore;
     }
 
     public void StartNewGame()
     {
-        SceneManager.LoadScene("ScenarioSelection");
+        SceneManager.LoadScene(GameConstants.sceneScenarioSelection);
     }
     
     public void BackToMainMenu() 
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(GameConstants.sceneMain);
     }
     public void Update() 
     {
@@ -42,6 +42,5 @@ public class GameOverScript : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-        Debug.Log("Has quit Game");
     }
 }

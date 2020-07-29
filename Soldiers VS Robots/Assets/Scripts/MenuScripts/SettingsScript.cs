@@ -13,7 +13,7 @@ public class SettingsScript : MonoBehaviour
 
     public void Start()
     {
-		screenToggle = GameObject.Find("Full Screen toggle");
+		screenToggle = GameObject.Find(GameConstants.fullScreenToggle);
         if (Screen.fullScreen)
         {
             screenToggle.GetComponent<Toggle>().isOn = true;
@@ -28,16 +28,17 @@ public class SettingsScript : MonoBehaviour
 
 	private void PopulateDropDown()
 	{
-		resolutions = new List<string>(){
-										Screen.currentResolution.width + "x" + Screen.currentResolution.height+"(current)",
-										"1280x720", "1366x768", "1920x1080", "3840x2160"};
+		string currentResulutionString = Screen.currentResolution.width + "x" + Screen.currentResolution.height + "(current)";
+		
+		resolutions = new List<string>(){currentResulutionString, GameConstants.resolutionLow, GameConstants.resolutionMedium,
+										GameConstants.resolutionRegular, GameConstants.resolutionHigh};
 
 		dropDown.AddOptions(resolutions);
 	}
 
     public void SetVolume(float volume)
     {
-        audioMixer.SetFloat("Volume", volume);
+        audioMixer.SetFloat(GameConstants.volume, volume);
     }
     public void Update() {
         if (Input.GetKeyDown(KeyCode.Escape)) 
@@ -50,16 +51,16 @@ public class SettingsScript : MonoBehaviour
  		switch (resolutionIndex) 
         {
                 case 1:
-					Screen.SetResolution(1280, 720,Screen.fullScreen);
+					Screen.SetResolution(GameConstants.resolutionLowWidth, GameConstants.resolutionLowHeight,Screen.fullScreen);
                     break;
                 case 2:
-					Screen.SetResolution(1366, 768,Screen.fullScreen);
+					Screen.SetResolution(GameConstants.resolutionMediumWidth, GameConstants.resolutionMediumHeight,Screen.fullScreen);
                     break;
                 case 3:
-					Screen.SetResolution(1920,1080,Screen.fullScreen);
+					Screen.SetResolution(GameConstants.resolutionRegularWidth,GameConstants.resolutionRegularHeight,Screen.fullScreen);
                     break;
                 case 4:
-					Screen.SetResolution(3840,2160,Screen.fullScreen);
+					Screen.SetResolution(GameConstants.resolutionHighWidth,GameConstants.resolutionHighHeight,Screen.fullScreen);
                     break;
 		}
 	

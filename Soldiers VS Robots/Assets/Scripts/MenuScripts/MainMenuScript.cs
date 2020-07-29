@@ -14,7 +14,7 @@ public class MainMenuScript : MonoBehaviour
 
     public void StartNewGame() 
     {
-        SceneManager.LoadScene("PrepareGame");
+        SceneManager.LoadScene(GameConstants.scenePrepareGame);
     }
 
     public void Update() 
@@ -27,7 +27,6 @@ public class MainMenuScript : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-        Debug.Log("Has quit Game");
     }
 
 

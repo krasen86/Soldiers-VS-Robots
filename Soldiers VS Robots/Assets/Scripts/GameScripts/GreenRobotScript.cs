@@ -5,18 +5,15 @@ using UnityEngine.UI;
 
 public class GreenRobotScript  : RobotScript
 {
-      
-	private PlayerState playerState;
-
+	
 
     void Awake()
     {  	    
 		this.GameState = GameState.Instance;
-	    playerState = PlayerState.Instance;
-        HealthPoints = 100;
-	    this.Damage = 10;
-	    this.MovementSpeed = 4f;
-      	FireDelay = 0.75f;
+        HealthPoints = GameConstants.startHealth;
+	    this.Damage = GameConstants.baseDamage;
+	    this.MovementSpeed = GameConstants.greenRobotMovement;
+      	FireDelay = GameConstants.robotFireDelay;
 		CanFire = true;
 	 	this.RobotBody = GetComponent<Rigidbody2D>(); 
         this.RobotAnimator = GetComponent<Animator>();
@@ -30,35 +27,17 @@ public class GreenRobotScript  : RobotScript
 			KillRobot();
 			Destroy(this.gameObject);
 		}
-
-		else if(HealthPoints > 0){
-		
-
-			if(Vector3.Distance(GetSoldier().transform.position, transform.position) < GetFollowDistance())
-			{     
-				if(this.CanFire  && !playerState.PlayerDead)
-				{
-					FireLaser();
-					this.CanFire = false;
-					StartCoroutine(Delay());
-				}
-			}
-			else 
-			{
-				if (transform.position != this.GetStartPosition())
-				{
-					transform.position = this.GetStartPosition();
-					RobotAnimator.SetBool("moving", false);
-				}
-			}
-
-       		FindSoldier();
+		else if(HealthPoints > 0)
+		{
+			//The robot is restricted in movemnet within predifined boundries
+			ControllBoundries();
+			//Check if player is in rannge and fire laser
+			CheckForAttackSoldier();
+			//Find and follow soldier
+			FollowSoldier();
 		}
 
 		UpdateHealthBar();
-
-
-
     }
 
 
@@ -68,20 +47,21 @@ public class GreenRobotScript  : RobotScript
 
 	void OnCollisionEnter2D (Collision2D collision)
 	{
-		if(collision.gameObject.tag == "bullet" )
+		if(collision.gameObject.tag == GameConstants.bulletTag)
 		{			
+			PlayerState playerState = PlayerState.Instance;
 			playerState.PlayerScore += (int) (this.Damage * this.GameState.GameDifficulty);
-			if(this.GameState.GameDifficulty == 1)
+			if(this.GameState.GameDifficulty == GameConstants.normalDificulty)
 			{
-				this.HealthPoints -= this.Damage  * 2;
+				this.HealthPoints -= this.Damage * GameConstants.greenHealthDamage;
 			}
-			else if (this.GameState.GameDifficulty == 2)
+			else if (this.GameState.GameDifficulty == GameConstants.hardDificulty)
 			{
-				this.HealthPoints -= (int) (this.Damage * 0.5) * 2;
+				this.HealthPoints -= (int) (this.Damage * GameConstants.easyDificulty) * GameConstants.greenHealthDamage;//Recive less damage
 			}
 			else
 			{
-				this.HealthPoints -= (int) (this.Damage * 2) * 2;
+				this.HealthPoints -= (int) (this.Damage * GameConstants.hardDificulty) * GameConstants.greenHealthDamage;//Receive more damage for easy gameplay
 			}
 			Destroy(collision.gameObject);
 		}	

@@ -36,10 +36,10 @@ public class SoldierScript : MonoBehaviour
 	    {
 		    if (Input.GetKeyDown(KeyCode.E) && item != null) 
 		    {
-			    AddItem(item);
+			    AddItemContent(item);
 		    }
             
-		    if(Input.GetButtonDown("Shoot") && playerState.PlayerBullets > 0 && playerState.PlayerHealth >= 0 && !PauseScript.Paused)
+		    if(Input.GetButtonDown(GameConstants.shootButton) && playerState.PlayerBullets > 0 && playerState.PlayerHealth >= 0 && !PauseScript.Paused)
 		    {
 			    FireBullet();
 			    StartCoroutine(FireCo());
@@ -62,45 +62,46 @@ public class SoldierScript : MonoBehaviour
 		    		if( playerState.PlayerHealth >= 0)
             		{
             			movement = Vector3.zero;
-                    	movement.x = Input.GetAxisRaw("Horizontal");
-                    	movement.y = Input.GetAxisRaw("Vertical");
+                    	movement.x = Input.GetAxisRaw(GameConstants.axisButtonHorizontal);
+                    	movement.y = Input.GetAxisRaw(GameConstants.axisButtonVertical);
 					
             
             			if(movement != Vector3.zero)
             			{
             				MoveSoldier();		
-            				soldierAnimator.SetFloat("moveX", movement.x);            		
-            				soldierAnimator.SetFloat("moveY", movement.y);	
-            				soldierAnimator.SetBool("running", true);		
+            				soldierAnimator.SetFloat(GameConstants.moveXAnim, movement.x);            		
+            				soldierAnimator.SetFloat(GameConstants.moveYAnim, movement.y);	
+            				soldierAnimator.SetBool(GameConstants.movementPlayerAnim, true);		
             			}
             			else
             			{
-            				soldierAnimator.SetBool("running", false);		
+            				soldierAnimator.SetBool(GameConstants.movementPlayerAnim, false);		
             			}
             		}
 	    }
 
     }
 
-	private void AddItem(GameObject itemObject)
+    //Update player parameters depending of the type and value of the picked up object
+	private void AddItemContent(GameObject itemObject)
 	{
-		if(itemObject.tag == "Crystal")
+		if(itemObject.tag == GameConstants.crystalTag)
 		{
-			playerState.PlayerScore =(int) (playerState.PlayerScore + ((5 * gameState.MissionTime * gameState.GameDifficulty) + 500));
+			playerState.PlayerScore =(int) (playerState.PlayerScore + ((GameConstants.endGamePointsModifier * gameState.MissionTime * gameState.GameDifficulty) + GameConstants.crystalPoints));
 			crystalAudio.Play();
 			Destroy(itemObject);
 			GameEndedScript.Completed = true;
 		}
-		else if(itemObject.tag == "weapon")
+		else if(itemObject.tag == GameConstants.weaponTag)
 		{
 			
-			playerState.PlayerBullets += (int) (40 * gameState.GameDifficulty);
+			playerState.PlayerBullets += (int) (GameConstants.weaponExtraBullets * gameState.GameDifficulty);
 			bulletsAudio.Play();
 			Destroy(itemObject);
 		}
-		else if(itemObject.tag == "health")
+		else if(itemObject.tag == GameConstants.healthItemTag)
 		{
-			playerState.PlayerHealth += (int) (30/gameState.GameDifficulty);
+			playerState.PlayerHealth += (int) (GameConstants.healthExtraModifier/gameState.GameDifficulty);
 
 			healthAudio.Play();
 			Destroy(itemObject);
@@ -109,52 +110,42 @@ public class SoldierScript : MonoBehaviour
 
 	private IEnumerator FireCo()
 	{
-		soldierAnimator.SetBool("shooting", true);
+		soldierAnimator.SetBool(GameConstants.shootingAnim, true);
 		yield return null;
-		soldierAnimator.SetBool("shooting", false);
-		yield return new WaitForSeconds(.2f);
+		soldierAnimator.SetBool(GameConstants.shootingAnim, false);
+		yield return new WaitForSeconds(GameConstants.shortDelay);
 	}
 
 	private IEnumerator DieCo()
 	{
 		playerState.PlayerDead = true;
-		soldierAnimator.SetBool("dead", true);
-		yield return new WaitForSeconds(0.2f);
-		soldierAnimator.SetBool("dead", false);
-		yield return new WaitForSeconds(0.1f);
-		
-
+		soldierAnimator.SetBool(GameConstants.deadAnim, true);
+		yield return new WaitForSeconds(GameConstants.shortDelay);
+		soldierAnimator.SetBool(GameConstants.deadAnim, false);
+		yield return new WaitForSeconds(GameConstants.shortDelay);
 	}
 
 	void FireBullet()
 	{
-		playerState.PlayerBullets = playerState.PlayerBullets - 1;
-		Vector2 direction = new Vector2(soldierAnimator.GetFloat("moveX"),soldierAnimator.GetFloat("moveY"));
-		Bullet bullet = Instantiate(bulletTemplate, transform.position, Quaternion.identity).GetComponent<Bullet>();
-		if (direction.x == 0 && direction.y == 0)
-		{
-			bullet.FireBullet(Vector2.right, Vector3.zero);
-
-		}
-		else
-		{
-			bullet.FireBullet(direction, Vector3.zero);
-
-		}
-
+		playerState.PlayerBullets -= 1;
+		Vector2 direction = new Vector2(soldierAnimator.GetFloat(GameConstants.moveXAnim),soldierAnimator.GetFloat(GameConstants.moveYAnim));
+		BulletScript bullet = Instantiate(bulletTemplate, transform.position, Quaternion.identity).GetComponent<BulletScript>();
+		bullet.FireBullet(direction, Vector3.zero);
+		
 	}
 
 	void OnCollisionEnter2D (Collision2D collision)
 	{
-		if(collision.gameObject.tag == "laser" )
+		if(collision.gameObject.tag == GameConstants.laserTag )
 		{			
-			if(gameState.GameDifficulty == 1)
+			if(gameState.GameDifficulty == GameConstants.normalDificulty)
 			{
-				playerState.PlayerHealth -= 10;
+				playerState.PlayerHealth -= GameConstants.baseDamage;
 			}
 			else	
 			{
-				playerState.PlayerHealth -= 5;
+				// Balance the game for hard and easy levels so that the player reseives less damage doesn't get killed easaly
+				playerState.PlayerHealth -= (int) (GameConstants.baseDamage/GameConstants.hardDificulty); 
 			}
 		}	
 	}
@@ -168,9 +159,9 @@ public class SoldierScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider2D)
     {
-        if(collider2D.tag == "Crystal"  || collider2D.gameObject.tag == "health" || collider2D.gameObject.tag == "weapon")
+        if(collider2D.tag == GameConstants.crystalTag  || collider2D.gameObject.tag == GameConstants.healthItemTag || collider2D.gameObject.tag == GameConstants.weaponTag)
 		{
-			UIViewController.inRange = true;
+			playerState.ItemInRange = true;
 			item = collider2D.gameObject;
 		}
         
@@ -180,9 +171,9 @@ public class SoldierScript : MonoBehaviour
     void OnTriggerExit2D(Collider2D collider2D)
     {
 
-        if(collider2D.gameObject.tag == "Crystal" || collider2D.gameObject.tag == "health" || collider2D.gameObject.tag == "weapon" )
+        if(collider2D.gameObject.tag == GameConstants.crystalTag || collider2D.gameObject.tag == GameConstants.healthItemTag || collider2D.gameObject.tag == GameConstants.weaponTag )
 		{
-			UIViewController.inRange = false;
+			playerState.ItemInRange = false;
 			item = null;
 		}
 

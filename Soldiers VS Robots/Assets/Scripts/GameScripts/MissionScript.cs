@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class MissionScript : MonoBehaviour
 {
     private GameState gameState;
-    private const float defaultMisionTime = 300f;
 
     void Awake()
     {
@@ -17,7 +16,7 @@ public class MissionScript : MonoBehaviour
 
     void Start()
     {
-        gameState.MissionTime = defaultMisionTime;
+        gameState.MissionTime = GameConstants.defaultMisionTime;
     }
 
     // Update is called once per frame

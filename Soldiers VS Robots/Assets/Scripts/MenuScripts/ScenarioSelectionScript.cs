@@ -9,19 +9,25 @@ public class ScenarioSelectionScript : MonoBehaviour
     
     public void StartMission1() 
     {
-        playerState = PlayerState.Instance;
-        playerState.SetPlayerState();
-        SceneManager.LoadScene("Scenario1");
+        
+        playerState.SetPlayerState();        
+        SceneManager.LoadScene(GameConstants.sceneScenarioOne);
+
+        
     }
     public void StartMission2() 
     {
-        playerState = PlayerState.Instance;
         playerState.SetPlayerState();
-        SceneManager.LoadScene("Scenario2");
+        SceneManager.LoadScene(GameConstants.sceneScenarioTwo);
     }
     public void BackToPrepareGame() 
     {
-        SceneManager.LoadScene("PrepareGame");
+        SceneManager.LoadScene(GameConstants.scenePrepareGame);
+    }
+
+    public void Start()
+    {
+        playerState = PlayerState.Instance;
     }
    public void Update()
    {

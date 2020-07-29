@@ -14,19 +14,22 @@ public class RankingsScript : MonoBehaviour
 
         private void Awake()
         {		
-			
+				//Get the players and sort the list
                 playerScores = DataIOStream.GetPlayerController().playersList.OrderByDescending( i => i.score).ToList();
 		
-				tableEntry = transform.Find("Table Entry");
-				template = tableEntry.Find("Template");
+				tableEntry = transform.Find(GameConstants.tableEntry);
+				template = tableEntry.Find(GameConstants.template);
 				
+                
+                // start from one since the first row is the template, initialize the table for top 10 player scores
                 float height = 20f;
                 for (int i = 1; i < 10; i++)
                 {
                         Transform tableRow = Instantiate(template, tableEntry);
 						RectTransform rectTransform = tableRow.GetComponent<RectTransform>();
 						rectTransform.anchoredPosition = new Vector2(0, -height * i);
-						tableRow.GetComponent<PlayerScoreScript>().SetPlayerRank((i+1) +"");
+						tableRow.GetComponent<PlayerScoreScript>().SetPlayerRank((i+1) +""); //since row 1 is template we start from i+1
+						//initialize row with data from the list
 						if(i < playerScores.Count)
 						{
                         	tableRow.GetComponent<PlayerScoreScript>().SetPlayerName(playerScores[i].name);
@@ -36,7 +39,7 @@ public class RankingsScript : MonoBehaviour
                 }					
 				RectTransform templateTransform = template.GetComponent<RectTransform>();
                 templateTransform.anchoredPosition = new Vector2(0, -height * 0);
-                template.GetComponent<PlayerScoreScript>().SetPlayerRank((1) +"");
+                template.GetComponent<PlayerScoreScript>().SetPlayerRank((1) +"");//first row is the template => first element in the list position zero
 				if(playerScores.Any())
 				{
 					template.GetComponent<PlayerScoreScript>().SetPlayerName(playerScores[0].name);

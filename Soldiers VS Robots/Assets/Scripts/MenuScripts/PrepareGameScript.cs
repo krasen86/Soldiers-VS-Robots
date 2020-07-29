@@ -18,6 +18,7 @@ public class PrepareGameScript : MonoBehaviour
     public void SelectScenario()
     {
 	    playerState = PlayerState.Instance;
+	    //User name can be max 50 charecters, name canot be empty and must contain leters(english latin) and/or number, underscore is allowed 
 		if(string.IsNullOrEmpty(playerName.text) || !Regex.IsMatch(playerName.text,  @"^[a-zA-Z0-9_]+[a-zA-Z0-9_ ]*$") || playerName.text.Length >= 50)
 		{
 			ClearInputField();
@@ -25,10 +26,11 @@ public class PrepareGameScript : MonoBehaviour
 		else
 		{		
 			playerState.PlayerName = playerName.text;
-			SceneManager.LoadScene("ScenarioSelection");
+			SceneManager.LoadScene(GameConstants.sceneScenarioSelection);
+			//if not initialized dificulty is normal
 			if (gameState.GameDifficulty <= 0)
 			{
-				gameState.GameDifficulty = 1f;
+				gameState.GameDifficulty = GameConstants.normalDificulty;
 			}
 
 		}
@@ -38,7 +40,7 @@ public class PrepareGameScript : MonoBehaviour
     private void ClearInputField()
     {
 	    playerName.text = "";
-	    playerName.placeholder.GetComponent<TMP_Text>().text = "Invalid Name";
+	    playerName.placeholder.GetComponent<TMP_Text>().text = GameConstants.invalidNameMsg;
     }
 
     public void SetGameDifficulty(int difficulty)
@@ -47,20 +49,20 @@ public class PrepareGameScript : MonoBehaviour
 	    switch (difficulty) 
 	    {
 		    case 0:
-			    gameState.GameDifficulty = 1f;
+			    gameState.GameDifficulty = GameConstants.normalDificulty;
 			    break;
 		    case 1:
-			    gameState.GameDifficulty = 0.5f;
+			    gameState.GameDifficulty = GameConstants.easyDificulty;
 			    break;
 		    case 2:
-			    gameState.GameDifficulty = 2f;
+			    gameState.GameDifficulty = GameConstants.hardDificulty;
 			    break;
 	    }
     }
 
     public void BackToMainMenu() 
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(GameConstants.sceneMain);
     }
        
     public void Update() 

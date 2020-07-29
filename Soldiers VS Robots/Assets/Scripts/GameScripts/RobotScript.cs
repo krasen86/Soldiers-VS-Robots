@@ -9,12 +9,9 @@ public class RobotScript : MonoBehaviour
 
     public int HealthPoints { get; set; }
     public int Damage { get; set; }
-
     public float MovementSpeed { get; set; }
-    
     public Rigidbody2D RobotBody { get; set; }
-
-
+    
     [SerializeField] private float atackDistance;
     [SerializeField] private float followDistance;
 	[SerializeField] private GameObject laserTemplate;
@@ -25,47 +22,21 @@ public class RobotScript : MonoBehaviour
     
     [SerializeField] private Boundary boundary; 
     [SerializeField] private Vector2 startPosition;   
-
-	public float SoldierPosition { get; set; }
+    
 	public GameState GameState { get; set; }
 	public Animator RobotAnimator { get; set; }
 	public float FireDelay { get; set; }
 	public bool CanFire { get; set; }
 
+	
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-     	SoldierPosition = soldier.transform.position.y;
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        transform.position = new Vector3(Mathf.Clamp(RobotBody.position.x, boundary.xMin, boundary.xMax),
-            Mathf.Clamp(RobotBody.position.y, boundary.yMin, boundary.yMax), transform.position.z
-        );
-        
-    }
-
-
+ 
     public Vector3 GetStartPosition()
     {
         return new Vector3(startPosition.x, startPosition.y, 0f);
     }
-	public GameObject GetSoldier()
-	{
-		return soldier;
-	}
 
-	public float GetFollowDistance()
-	{ 
-		return followDistance;
-	}
-
-	public void UpdateHealthBar()
+    public void UpdateHealthBar()
 	{		
 		healthBar.value = HealthPoints;
         if (healthBar.value <= healthBar.minValue)
@@ -78,19 +49,50 @@ public class RobotScript : MonoBehaviour
         }
 	}
 
+	public void CheckForAttackSoldier()
+	{
+		PlayerState playerState = PlayerState.Instance;
+
+		if(Vector3.Distance(soldier.transform.position, transform.position) < followDistance)
+		{     
+			if(CanFire && !playerState.PlayerDead)
+			{
+				FireLaser();
+				CanFire = false;
+				StartCoroutine(Delay());
+			}
+		}
+		else
+		{
+			//Teleport to start position if player not in range
+			if (transform.position != GetStartPosition())
+			{
+				transform.position = GetStartPosition();
+				RobotAnimator.SetBool(GameConstants.movementAnim, false);
+			}
+
+		}
+	}
+
+	public void ControllBoundries()
+	{
+		transform.position = new Vector3(Mathf.Clamp(RobotBody.position.x, boundary.xMin, boundary.xMax),
+			Mathf.Clamp(RobotBody.position.y, boundary.yMin, boundary.yMax), transform.position.z
+		);
+	}
+
 	public void KillRobot()
 	{
 		GameObject deathAnimation = Instantiate(deathRobot, transform.position, Quaternion.identity );
-		Destroy(deathAnimation, 0.5f);
+		Destroy(deathAnimation, GameConstants.deathAnimationDelay);
 	}
 
 	public void FireLaser()
 	{
 		Vector3 direction =  soldier.transform.position - transform.position;
-		EnemyLaser laser = Instantiate(laserTemplate, transform.position, Quaternion.identity).GetComponent<EnemyLaser>();
-		float tempZ = Mathf.Atan2(RobotAnimator.GetFloat("moveY"), RobotAnimator.GetFloat("moveX")) * Mathf.Rad2Deg;
-
-		laser.FireLaser(direction, new Vector3(0,0, tempZ));
+		LaserScript laser = Instantiate(laserTemplate, transform.position, Quaternion.identity).GetComponent<LaserScript>();
+		float vectorZValue = Mathf.Atan2(RobotAnimator.GetFloat(GameConstants.moveYAnim), RobotAnimator.GetFloat(GameConstants.moveXAnim)) * Mathf.Rad2Deg;
+		laser.FireLaser(direction, new Vector3(0,0, vectorZValue));
 	}
 
 	   
@@ -101,21 +103,22 @@ public class RobotScript : MonoBehaviour
    }
 
 
-    public void FindSoldier()
+    public void FollowSoldier()
     {
+	    //if soldier is in follow range and not less then minimum atack distnace move robot towards soldier
         if (Vector3.Distance(soldier.transform.position, transform.position) < followDistance && 
             Vector3.Distance(soldier.transform.position, transform.position) > atackDistance)
         {
 			RobotAnimator.enabled = true;
             this.RobotBody.MovePosition(Vector3.MoveTowards(transform.position, soldier.transform.position, this.MovementSpeed * Time.deltaTime));
 			Vector3 movement = soldier.transform.position - transform.position;
-			RobotAnimator.SetFloat("moveX", movement.x);            		
-			RobotAnimator.SetFloat("moveY", movement.y);	
-			RobotAnimator.SetBool("moving", true);
+			RobotAnimator.SetFloat(GameConstants.moveXAnim, movement.x);            		
+			RobotAnimator.SetFloat(GameConstants.moveYAnim, movement.y);	
+			RobotAnimator.SetBool(GameConstants.movementAnim, true);
         }
 		else 
 		{
-			RobotAnimator.enabled = false;
+			RobotAnimator.enabled = false; // stop animation so that it doesn't loop moving when close to soldier
 		}
 
     }
@@ -124,4 +127,5 @@ public class RobotScript : MonoBehaviour
 	{
 		healthBar.maxValue = health;
 	}
+    
 }

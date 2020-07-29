@@ -50,8 +50,6 @@ public class PauseScript : MonoBehaviour
 
 		Paused = false;
         Application.Quit();
-       
-        Debug.Log("Has quit Game");
     }
     
 }

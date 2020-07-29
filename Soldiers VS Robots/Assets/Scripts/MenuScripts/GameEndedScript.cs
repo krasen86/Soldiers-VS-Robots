@@ -12,9 +12,8 @@ public class GameEndedScript : MonoBehaviour
 
     public static bool Completed { get; set; }
     private GameState gameState;
-
-
     private PlayerState playerState;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -29,19 +28,19 @@ public class GameEndedScript : MonoBehaviour
         if (gameState.MissionTime <= 0)
         {
             gameOverPanel.SetActive(true);
-            gameOverMessage.text = "Time Finished\n Mission Failed";
+            gameOverMessage.text = GameConstants.gameCompletedTimeOver;
             StartCoroutine(DelayAndEnd());
         }
         else if (playerState.PlayerHealth <= 0)
         {
             gameOverPanel.SetActive(true);
-            gameOverMessage.text = "Soldier was Killed\n Mission Failed";
+            gameOverMessage.text = GameConstants.gameCompletedKilled;
             StartCoroutine(DelayAndEnd());
         }
         else if (Completed)
         {
             gameOverPanel.SetActive(true);
-            gameOverMessage.text = "Mission Completed";
+            gameOverMessage.text = GameConstants.gameCompletedSuccess;
             StartCoroutine(DelayAndEnd());
         }
         else
@@ -53,8 +52,8 @@ public class GameEndedScript : MonoBehaviour
     
     private IEnumerator DelayAndEnd()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(GameConstants.baseDelay);
 		DataIOStream.AddPlayer(playerState.PlayerName, playerState.PlayerScore);
-        SceneManager.LoadScene("GameEnded");
+        SceneManager.LoadScene(GameConstants.sceneGameOver);
     }
 }

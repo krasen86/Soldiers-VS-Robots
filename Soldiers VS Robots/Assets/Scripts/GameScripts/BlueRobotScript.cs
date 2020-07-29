@@ -44,10 +44,14 @@ public class BlueRobotScript : RobotScript
 					StartCoroutine(Delay());
 				}
 			}
-			else 
+			else
 			{
-				this.RobotBody.MovePosition(Vector3.MoveTowards(transform.position, this.GetStartPosition(), this.MovementSpeed * Time.deltaTime));
-				RobotAnimator.SetBool("moving", false);
+				if (transform.position != this.GetStartPosition())
+				{
+					transform.position = this.GetStartPosition();
+					RobotAnimator.SetBool("moving", false);
+				}
+
 			}
 
        		FindSoldier();

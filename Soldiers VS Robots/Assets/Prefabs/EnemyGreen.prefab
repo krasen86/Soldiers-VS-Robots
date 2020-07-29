@@ -536,7 +536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24fee24a4a303364bba3d9ca438a9f6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atackDistance: 6
+  atackDistance: 5
   followDistance: 16
   laserTemplate: {fileID: 5073068992727973452, guid: 489aca2322ece2a4da1accf4cfa3c493,
     type: 3}

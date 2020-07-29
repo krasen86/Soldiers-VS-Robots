@@ -22,12 +22,11 @@ public class RankingsScript : MonoBehaviour
 				
                 
                 // start from one since the first row is the template, initialize the table for top 10 player scores
-                float height = 20f;
                 for (int i = 1; i < 10; i++)
                 {
                         Transform tableRow = Instantiate(template, tableEntry);
 						RectTransform rectTransform = tableRow.GetComponent<RectTransform>();
-						rectTransform.anchoredPosition = new Vector2(0, -height * i);
+						rectTransform.anchoredPosition = new Vector2(0, -GameConstants.tableRowHeight * i);
 						tableRow.GetComponent<PlayerScoreScript>().SetPlayerRank((i+1) +""); //since row 1 is template we start from i+1
 						//initialize row with data from the list
 						if(i < playerScores.Count)
@@ -38,7 +37,7 @@ public class RankingsScript : MonoBehaviour
 
                 }					
 				RectTransform templateTransform = template.GetComponent<RectTransform>();
-                templateTransform.anchoredPosition = new Vector2(0, -height * 0);
+                templateTransform.anchoredPosition = new Vector2(0,0);
                 template.GetComponent<PlayerScoreScript>().SetPlayerRank((1) +"");//first row is the template => first element in the list position zero
 				if(playerScores.Any())
 				{

@@ -45,14 +45,13 @@ public class GameConstants
     public const string invalidNameMsg = "Invalid Name";
     public const string tableEntry = "Table Entry";
     public const string template = "Template";
+    public const float tableRowHeight = 20f;
     public const string fullScreenToggle = "Full Screen toggle";
     public const string playerNameHeader = "Player: ";
     public const string playerScoreHeader = "Score: ";
     public const string playerBulletsHeader = "Bullets: ";
     public const string missionTimeHeader = "Bullets: ";
 
-
-    
     //Resolutions
     public const string resolutionLow = "1280x720";
     public const int resolutionLowWidth = 1280;
@@ -81,7 +80,7 @@ public class GameConstants
     public const string axisButtonHorizontal = "Horizontal";
     public const string axisButtonVertical = "Vertical";
     
-    //Functionality
+    //Functionality game modifiers
     public const float defaultMisionTime = 300f; //time for completion a mission is 5 min
     public const int startHealth = 100;
     public const int startBulletsHard = 80;

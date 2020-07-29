@@ -122,7 +122,6 @@ public class SoldierScript : MonoBehaviour
 		soldierAnimator.SetBool(GameConstants.deadAnim, true);
 		yield return new WaitForSeconds(GameConstants.shortDelay);
 		soldierAnimator.SetBool(GameConstants.deadAnim, false);
-		yield return new WaitForSeconds(GameConstants.shortDelay);
 	}
 
 	void FireBullet()

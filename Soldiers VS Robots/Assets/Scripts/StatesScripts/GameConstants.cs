@@ -53,7 +53,7 @@ public class GameConstants
     public const string missionTimeHeader = "Bullets: ";
 	public const string currentResolutionHeader = "Current: ";
 	public const string resolutionDropDownLebal = "Choose New";
-	public const string currentResolutionDefault = "Choose a resolution from the list bellow";
+	public const string currentResolutionDefault = "Choose a resolution from the list bellow\n Recommended 1920x1080 ";
 
 
     //Resolutions

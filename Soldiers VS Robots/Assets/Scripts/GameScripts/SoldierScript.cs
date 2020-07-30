@@ -127,9 +127,20 @@ public class SoldierScript : MonoBehaviour
 	void FireBullet()
 	{
 		playerState.PlayerBullets -= 1;
+		//Using the animation to determine which direction to fire, where the soldier is facing 
 		Vector2 direction = new Vector2(soldierAnimator.GetFloat(GameConstants.moveXAnim),soldierAnimator.GetFloat(GameConstants.moveYAnim));
 		BulletScript bullet = Instantiate(bulletTemplate, transform.position, Quaternion.identity).GetComponent<BulletScript>();
-		bullet.FireBullet(direction, Vector3.zero);
+		
+		if (direction.x == 0 && direction.y == 0)// if the soldier is in start position fire right
+		{
+			bullet.FireBullet(Vector2.right, Vector3.zero);
+
+		}
+		else
+		{
+			bullet.FireBullet(direction, Vector3.zero);
+
+		}
 		
 	}
 

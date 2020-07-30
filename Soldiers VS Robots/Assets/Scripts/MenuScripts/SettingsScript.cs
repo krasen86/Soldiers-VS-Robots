@@ -7,14 +7,20 @@ using TMPro;
 public class SettingsScript : MonoBehaviour
 {
 	private GameObject screenToggle;
+	private static string currentResolution = "";
     [SerializeField] private AudioMixer audioMixer;
 	[SerializeField] private TMP_Dropdown dropDown;
-	private List<string> resolutions;
+	
+	[SerializeField] private TMP_Text currentResolutionText;
 
-    public void Start()
+	
+
+	public void Start()
     {
 		screenToggle = GameObject.Find(GameConstants.fullScreenToggle);
-        if (Screen.fullScreen)
+		UpdateCurrentRosolutionText();
+
+		if (Screen.fullScreen)
         {
             screenToggle.GetComponent<Toggle>().isOn = true;
         }
@@ -23,20 +29,13 @@ public class SettingsScript : MonoBehaviour
 	        screenToggle.GetComponent<Toggle>().isOn = false;
 
 	    }
-		PopulateDropDown();
+        dropDown.AddOptions(new List<string>(){GameConstants.resolutionDropDownLebal, GameConstants.resolutionLow, GameConstants.resolutionMedium,
+	        GameConstants.resolutionRegular, GameConstants.resolutionHigh});
     }
 
-	private void PopulateDropDown()
-	{
-		string currentResulutionString = Screen.currentResolution.width + "x" + Screen.currentResolution.height + "(current)";
-		
-		resolutions = new List<string>(){currentResulutionString, GameConstants.resolutionLow, GameConstants.resolutionMedium,
-										GameConstants.resolutionRegular, GameConstants.resolutionHigh};
 
-		dropDown.AddOptions(resolutions);
-	}
 
-    public void SetVolume(float volume)
+	public void SetVolume(float volume)
     {
         audioMixer.SetFloat(GameConstants.volume, volume);
     }
@@ -51,21 +50,40 @@ public class SettingsScript : MonoBehaviour
  		switch (resolutionIndex) 
         {
                 case 1:
-					Screen.SetResolution(GameConstants.resolutionLowWidth, GameConstants.resolutionLowHeight,Screen.fullScreen);
-                    break;
+	                Screen.SetResolution(GameConstants.resolutionLowWidth, GameConstants.resolutionLowHeight,Screen.fullScreen);
+	                currentResolution = GameConstants.resolutionLow;
+	                break;
                 case 2:
-					Screen.SetResolution(GameConstants.resolutionMediumWidth, GameConstants.resolutionMediumHeight,Screen.fullScreen);
-                    break;
+	                Screen.SetResolution(GameConstants.resolutionMediumWidth, GameConstants.resolutionMediumHeight,Screen.fullScreen);
+	                currentResolution = GameConstants.resolutionMedium;
+	                break;
                 case 3:
-					Screen.SetResolution(GameConstants.resolutionRegularWidth,GameConstants.resolutionRegularHeight,Screen.fullScreen);
-                    break;
+	                Screen.SetResolution(GameConstants.resolutionRegularWidth,GameConstants.resolutionRegularHeight,Screen.fullScreen);
+	                currentResolution = GameConstants.resolutionRegular;
+	                break;
                 case 4:
-					Screen.SetResolution(GameConstants.resolutionHighWidth,GameConstants.resolutionHighHeight,Screen.fullScreen);
-                    break;
-		}
-	
+	                Screen.SetResolution(GameConstants.resolutionHighWidth,GameConstants.resolutionHighHeight,Screen.fullScreen);
+	                currentResolution = GameConstants.resolutionHigh;
+	                break;
+
+        }
+
+        UpdateCurrentRosolutionText();
+
     }
-	
+
+    public void UpdateCurrentRosolutionText()
+    {
+	    if ( currentResolution == "")
+	    {
+		    currentResolutionText.text = GameConstants.currentResolutionDefault;
+	    }
+	    else
+	    {
+		    currentResolutionText.text = GameConstants.currentResolutionHeader + currentResolution;
+
+	    }
+    }
 	public void FullScreenUpdate(bool fullScreen)
 	{
 		Screen.fullScreen = fullScreen;

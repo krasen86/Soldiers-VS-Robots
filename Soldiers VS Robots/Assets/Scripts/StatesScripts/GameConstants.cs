@@ -51,6 +51,10 @@ public class GameConstants
     public const string playerScoreHeader = "Score: ";
     public const string playerBulletsHeader = "Bullets: ";
     public const string missionTimeHeader = "Bullets: ";
+	public const string currentResolutionHeader = "Current: ";
+	public const string resolutionDropDownLebal = "Choose New";
+	public const string currentResolutionDefault = "Choose a resolution from the list bellow";
+
 
     //Resolutions
     public const string resolutionLow = "1280x720";

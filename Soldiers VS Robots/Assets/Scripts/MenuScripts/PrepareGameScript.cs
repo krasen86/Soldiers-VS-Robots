@@ -17,7 +17,6 @@ public class PrepareGameScript : MonoBehaviour
 	
     public void SelectScenario()
     {
-	    playerState = PlayerState.Instance;
 	    //User name can be max 50 charecters, name canot be empty and must contain leters(english latin) and/or number, underscore is allowed 
 		if(string.IsNullOrEmpty(playerName.text) || !Regex.IsMatch(playerName.text,  @"^[a-zA-Z0-9_]+[a-zA-Z0-9_ ]*$") || playerName.text.Length >= 50)
 		{

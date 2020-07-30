@@ -1,2 +1,2 @@
 # Soldiers vs Robots
-Guardians and Droids is a Unity engine game
+Soldiers VS Robots is a Unity Engine game created for summer course in game programming at Linneuniversitetet.

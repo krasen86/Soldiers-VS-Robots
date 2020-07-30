@@ -551,3 +551,4 @@ MonoBehaviour:
     yMax: 0
     xMax: 0
   startPosition: {x: 0, y: 0}
+  movementSpeed: 4

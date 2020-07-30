@@ -7,10 +7,7 @@ using UnityEngine.UI;
 public class RobotScript : MonoBehaviour
 {
 
-    public int HealthPoints { get; set; }
-    public int Damage { get; set; }
-    public float MovementSpeed { get; set; }
-    public Rigidbody2D RobotBody { get; set; }
+
     
     [SerializeField] private float atackDistance;
     [SerializeField] private float followDistance;
@@ -19,15 +16,17 @@ public class RobotScript : MonoBehaviour
 	[SerializeField] private Image healthBarImage;
 	[SerializeField] private GameObject soldier;
 	[SerializeField] private GameObject deathRobot;
-    
     [SerializeField] private Boundary boundary; 
     [SerializeField] private Vector2 startPosition;   
-    
-	public GameState GameState { get; set; }
-	public Animator RobotAnimator { get; set; }
-	public float FireDelay { get; set; }
-	public bool CanFire { get; set; }
+    [SerializeField] private float movementSpeed;
 
+	protected GameState GameState { get; set; }
+	protected Animator RobotAnimator { get; set; }
+	protected float FireDelay { get; set; }
+	protected bool CanFire { get; set; }
+    protected int HealthPoints { get; set; }
+    protected int Damage { get; set; }
+    protected Rigidbody2D RobotBody { get; set; }
 	
 
  
@@ -110,7 +109,7 @@ public class RobotScript : MonoBehaviour
             Vector3.Distance(soldier.transform.position, transform.position) > atackDistance)
         {
 			RobotAnimator.enabled = true;
-            this.RobotBody.MovePosition(Vector3.MoveTowards(transform.position, soldier.transform.position, this.MovementSpeed * Time.deltaTime));
+            this.RobotBody.MovePosition(Vector3.MoveTowards(transform.position, soldier.transform.position, movementSpeed * Time.deltaTime));
 			Vector3 movement = soldier.transform.position - transform.position;
 			RobotAnimator.SetFloat(GameConstants.moveXAnim, movement.x);            		
 			RobotAnimator.SetFloat(GameConstants.moveYAnim, movement.y);	

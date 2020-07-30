@@ -13,7 +13,6 @@ public class BossScript : RobotScript
         this.HealthPoints = (int) ((GameConstants.startHealth * GameConstants.bossModifier )* this.GameState.GameDifficulty);
         SetHealthBar(this.HealthPoints);
         this.Damage = GameConstants.bossModifier * GameConstants.baseDamage;
-        this.MovementSpeed = GameConstants.bossMovement;
         FireDelay = GameConstants.robotFireDelay;
         CanFire = true;
         this.RobotBody = GetComponent<Rigidbody2D>(); 

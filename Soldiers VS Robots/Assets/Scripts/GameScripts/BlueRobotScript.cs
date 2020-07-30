@@ -14,7 +14,6 @@ public class BlueRobotScript : RobotScript
 		this.GameState = GameState.Instance;
         HealthPoints = GameConstants.startHealth;
 	    this.Damage = GameConstants.baseDamage;
-	    this.MovementSpeed = GameConstants.blueRobotMovement;
       	FireDelay = GameConstants.robotFireDelay;
 		CanFire = true;
 	 	this.RobotBody = GetComponent<Rigidbody2D>(); 

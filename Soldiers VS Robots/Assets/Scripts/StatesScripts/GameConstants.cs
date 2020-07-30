@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class GameConstants
 {
     //Game dificulty constants
-    public static float easyDificulty = 0.5f;
+    public static float easyDificulty = 0.5f; 
     public static float normalDificulty = 1f;
     public static float hardDificulty = 2f;
     //Game over scene messages
@@ -91,9 +91,6 @@ public class GameConstants
     public const int healthExtraModifier = 30;
     public const int baseDamage = 10;
     public const int greenHealthDamage = 2; // modifier for green robot since green robot receives more damage than blue robot
-    public const float blueRobotMovement = 2f;
-    public const float bossMovement = 5f;
-    public const float greenRobotMovement = 4f;
     public const float robotFireDelay = 0.75f;
     public const int bossModifier = 2;
     public const float baseDelay = 3f;

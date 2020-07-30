@@ -287,6 +287,7 @@ MonoBehaviour:
     yMax: 0
     xMax: 0
   startPosition: {x: 0, y: 0}
+  movementSpeed: 10
 --- !u!95 &7092946340176616980
 Animator:
   serializedVersion: 3

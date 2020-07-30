@@ -46,9 +46,10 @@ public class PauseScript : MonoBehaviour
     }
     
     public void QuitGame()
-    { 
-
-		Paused = false;
+    {
+        PlayerState playerState = PlayerState.Instance;
+        DataIOStream.AddPlayer(playerState.PlayerName, playerState.PlayerScore);
+        Paused = false;
         Application.Quit();
     }
     

@@ -12,7 +12,6 @@ public class GreenRobotScript  : RobotScript
 		this.GameState = GameState.Instance;
         HealthPoints = GameConstants.startHealth;
 	    this.Damage = GameConstants.baseDamage;
-	    this.MovementSpeed = GameConstants.greenRobotMovement;
       	FireDelay = GameConstants.robotFireDelay;
 		CanFire = true;
 	 	this.RobotBody = GetComponent<Rigidbody2D>(); 

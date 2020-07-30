@@ -80,6 +80,7 @@ public class UIViewController : MonoBehaviour
     
     public void ExitGame()
     {
+		DataIOStream.AddPlayer(playerState.PlayerName, playerState.PlayerScore);
 	    SceneManager.LoadScene(GameConstants.sceneGameOver);
     }
 
